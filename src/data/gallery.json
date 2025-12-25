@@ -1,0 +1,25 @@
+{
+  "gallery": {
+    "title": "Photo Gallery",
+    "description": "Explore moments from Excel Islamic School - academics, activities, and community",
+    "categories": [
+      {
+        "id": "students",
+        "name": "Students & Classes"
+      },
+      {
+        "id": "facilities",
+        "name": "School Facilities"
+      },
+      {
+        "id": "events",
+        "name": "Events & Celebrations"
+      },
+      {
+        "id": "activities",
+        "name": "Activities & Programs"
+      }
+    ],
+    "images": []
+  }
+}

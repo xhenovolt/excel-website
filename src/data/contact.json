@@ -1,0 +1,159 @@
+{
+  "contact": {
+    "hero": {
+      "title": "Get In Touch",
+      "subtitle": "We'd love to hear from you. Contact us anytime."
+    },
+    "directContact": {
+      "title": "Contact Information",
+      "phone": {
+        "label": "Phone",
+        "primary": "+256 702 962984",
+        "secondary": [
+          "+256 701 962984",
+          "+256 706 074 179"
+        ]
+      },
+      "email": {
+        "label": "Email",
+        "address": "excelislamicschoolbusembatia@gmail.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "number": "+256702962984"
+      }
+    },
+    "location": {
+      "title": "Our Location",
+      "address": "Busembatia, Namutumba, Uganda",
+      "region": "Eastern Uganda",
+      "coordinates": {
+        "latitude": 0.3849,
+        "longitude": 33.8699
+      },
+      "description": "Located in the heart of Eastern Uganda, our campus is easily accessible from Namutumba town center.",
+      "directions": "Contact us for detailed driving directions or landmarks"
+    },
+    "hours": {
+      "title": "School Hours",
+      "weekdays": {
+        "day": "Monday - Friday",
+        "time": "6:00 AM - 4:00 PM"
+      },
+      "saturday": {
+        "day": "Saturday",
+        "time": "7:00 AM - 1:00 PM"
+      },
+      "sunday": {
+        "day": "Sunday",
+        "time": "Closed (Rest Day)"
+      },
+      "note": "Office hours may vary during holidays"
+    },
+    "departments": {
+      "title": "Contact by Department",
+      "departments": [
+        {
+          "name": "Admissions",
+          "description": "Questions about enrollment and school programs",
+          "phone": "+256 702 962984"
+        },
+        {
+          "name": "Academic Office",
+          "description": "Academic matters and student progress",
+          "phone": "+256 702 962984"
+        },
+        {
+          "name": "Boarding Office",
+          "description": "Boarding-related queries",
+          "phone": "+256 702 962984"
+        },
+        {
+          "name": "General Inquiries",
+          "description": "General information and visiting",
+          "email": "excelislamicschoolbusembatia@gmail.com"
+        }
+      ]
+    },
+    "form": {
+      "title": "Send us a Message",
+      "description": "Fill out the form below and we'll get back to you shortly",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Full Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email Address",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone Number",
+          "type": "tel",
+          "required": false
+        },
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea",
+          "required": true
+        }
+      ],
+      "submit": "Send Message",
+      "note": "We will respond within 24 hours"
+    },
+    "socialMedia": {
+      "title": "Follow Us",
+      "description": "Stay updated with school news and events",
+      "links": [
+        {
+          "platform": "Instagram",
+          "username": "excelislamicschool",
+          "url": "https://instagram.com/excelislamicschool"
+        },
+        {
+          "platform": "TikTok",
+          "username": "excelislamicschool",
+          "url": "https://tiktok.com/@excelislamicschool"
+        },
+        {
+          "platform": "Telegram",
+          "username": "excelislamicschool",
+          "url": "https://t.me/excelislamicschool"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "When can I visit the school?",
+          "answer": "We welcome visits during school hours. Please call ahead to arrange a convenient time for a campus tour."
+        },
+        {
+          "question": "What are the application deadlines?",
+          "answer": "Applications are accepted throughout the year. For optimal processing, apply by November for enrollment the following February."
+        },
+        {
+          "question": "Do you offer payment plans?",
+          "answer": "Yes, we offer flexible payment arrangements. Contact the admissions office to discuss options."
+        },
+        {
+          "question": "What is your late fee policy?",
+          "answer": "Please contact our office for information regarding fee payment deadlines and policies."
+        }
+      ]
+    }
+  }
+}

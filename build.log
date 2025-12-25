@@ -1,0 +1,46 @@
+
+> excel-website@0.1.0 build
+> next build
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/xhenvolt/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/xhenvolt/projects/excel-website/package-lock.json
+
+▲ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.6s
+  Running TypeScript ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/18) ...
+  Generating static pages using 3 workers (4/18) 
+  Generating static pages using 3 workers (8/18) 
+  Generating static pages using 3 workers (13/18) 
+✓ Generating static pages using 3 workers (18/18) in 350.6ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /academics
+├ ○ /admissions
+├ ƒ /api/about
+├ ƒ /api/academics
+├ ƒ /api/admissions
+├ ƒ /api/contact
+├ ƒ /api/gallery
+├ ƒ /api/school
+├ ƒ /api/seo
+├ ƒ /api/testimonials
+├ ○ /contact
+├ ○ /gallery
+└ ○ /testimonials
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,139 @@
+{
+  "school": {
+    "name": "Excel Islamic Nursery and Primary School",
+    "tagline": "Excellence in Islamic and Secular Education",
+    "shortDescription": "Shaping tomorrow's leaders through Islamic theology, secular excellence, and Quran memorisation",
+    "narrative": {
+      "opening": "We form young people who think deeply, act with integrity, and contribute meaningfully to the world.",
+      "chapter1": "Who is this school forming?",
+      "chapter1Description": "Thoughtful learners. Curious minds. Young people rooted in Islamic values, grounded in rigorous academics, and committed to excellence—not for its own sake, but as an expression of their faith and values.",
+      "chapter2": "What shapes their character?",
+      "chapter2Description": "A commitment to the whole person. We nurture intellectual rigor alongside spiritual depth. Academic excellence alongside moral courage. We believe that education is not the filling of a pail, but the lighting of a fire.",
+      "chapter3": "What future are they growing into?",
+      "chapter3Description": "Leaders. Changemakers. People who will think clearly, lead with integrity, and serve their communities with humility and conviction."
+    },
+    "location": {
+      "address": "Busembatia, Namutumba, Uganda",
+      "region": "Eastern Uganda",
+      "coordinates": {
+        "latitude": 0.3849,
+        "longitude": 33.8699
+      }
+    },
+    "contact": {
+      "phones": [
+        "+256 702 962984",
+        "+256 701 962984",
+        "+256 706 074 179"
+      ],
+      "email": "excelislamicschoolbusembatia@gmail.com",
+      "whatsapp": "+256702962984",
+      "socialMedia": {
+        "instagram": "excelislamicschool",
+        "tiktok": "excelislamicschool",
+        "telegram": "excelislamicschool"
+      }
+    },
+    "leadership": {
+      "director": {
+        "name": "Sheikh Hassan Muhammad Mwaita",
+        "title": "Director & Founder",
+        "image": "staff.jpg",
+        "bio": "With over 20 years of experience in Islamic education and school management, Sheikh Hassan has dedicated his life to building educational excellence grounded in Islamic values."
+      }
+    },
+    "academics": [
+      {
+        "id": "theology",
+        "title": "Islamic Theology",
+        "description": "Comprehensive Islamic education covering Quranic studies, Hadith, Fiqh (Islamic Jurisprudence), and Aqeedah (Islamic Creed)",
+        "icon": "BookOpen"
+      },
+      {
+        "id": "secular",
+        "title": "Secular Education",
+        "description": "Rigorous academic curriculum in Mathematics, English, Sciences, and Social Studies aligned with Ugandan National standards",
+        "icon": "Globe"
+      },
+      {
+        "id": "quran",
+        "title": "Quran Memorisation",
+        "description": "Dedicated Hifz program with expert instructors guiding students to memorise and master the Holy Quran",
+        "icon": "Sparkles"
+      }
+    ],
+    "sections": [
+      {
+        "id": "nursery",
+        "name": "Nursery",
+        "description": "Early childhood development focusing on foundational Islamic values and basic academic skills",
+        "ageGroup": "3-5 years"
+      },
+      {
+        "id": "primary",
+        "name": "Primary School",
+        "description": "Comprehensive education combining Islamic theology, secular academics, and Quran memorisation",
+        "ageGroup": "6-13 years"
+      }
+    ],
+    "facilities": [
+      {
+        "id": "day",
+        "name": "Day Section",
+        "description": "State-of-the-art facilities for day scholars with comfortable classrooms, learning centers, and dining areas",
+        "features": [
+          "Modern classrooms with interactive learning tools",
+          "Well-stocked library and resource center",
+          "Computer lab for digital literacy",
+          "Prayer facilities and Islamic learning spaces",
+          "Nutritious meal service"
+        ]
+      },
+      {
+        "id": "boarding",
+        "name": "Boarding Section",
+        "description": "Secure residential facilities providing a nurturing home away from home with dedicated supervision",
+        "features": [
+          "Comfortable dormitories with proper bedding",
+          "24/7 security and supervision",
+          "Quality meals prepared by professional kitchen staff",
+          "Modern sanitation facilities",
+          "Recreation and sports areas",
+          "Quran study halls for evening sessions"
+        ]
+      }
+    ],
+    "whyChooseUs": [
+      {
+        "title": "Islamic Excellence",
+        "description": "Our commitment to Islamic education is unparalleled in the region, with qualified instructors and structured curriculum"
+      },
+      {
+        "title": "Academic Rigor",
+        "description": "We maintain the highest academic standards, with consistent excellence in national examinations"
+      },
+      {
+        "title": "Holistic Development",
+        "description": "We nurture students spiritually, academically, and socially for well-rounded personal growth"
+      },
+      {
+        "title": "Quran Memorisation",
+        "description": "Dedicated Hifz program with proven success in producing qualified Hafiz students"
+      },
+      {
+        "title": "Safe Environment",
+        "description": "We provide a secure, disciplined, and supportive environment where students can thrive"
+      },
+      {
+        "title": "Expert Leadership",
+        "description": "Led by Sheikh Hassan Muhammad Mwaita, a visionary educator with decades of experience"
+      }
+    ],
+    "stats": {
+      "studentsEnrolled": "250+",
+      "yearsOperating": "12+",
+      "teacherCount": "25+",
+      "successRate": "98%"
+    }
+  }
+}

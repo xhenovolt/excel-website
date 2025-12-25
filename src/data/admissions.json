@@ -1,0 +1,160 @@
+{
+  "admissions": {
+    "hero": {
+      "title": "Join Excel Islamic School",
+      "subtitle": "Begin Your Journey to Academic and Spiritual Excellence"
+    },
+    "admissionProcess": {
+      "title": "How to Apply",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Inquiry",
+          "description": "Contact the school office or visit our campus to learn more about our programs"
+        },
+        {
+          "number": 2,
+          "title": "Application",
+          "description": "Submit a completed application form with required documents"
+        },
+        {
+          "number": 3,
+          "title": "Assessment",
+          "description": "Students take an assessment test to determine appropriate placement"
+        },
+        {
+          "number": 4,
+          "title": "Interview",
+          "description": "Student and parent interview to discuss school values and expectations"
+        },
+        {
+          "number": 5,
+          "title": "Decision",
+          "description": "Admission decision communicated with enrollment details"
+        },
+        {
+          "number": 6,
+          "title": "Registration",
+          "description": "Complete registration and prepare for the school term"
+        }
+      ]
+    },
+    "requirements": {
+      "title": "Admission Requirements",
+      "general": [
+        "Completed application form",
+        "Birth certificate or national ID",
+        "Previous school records (transfer students)",
+        "Health certificate and vaccination records",
+        "Parental consent and agreement to school policies"
+      ],
+      "academic": [
+        "Students are assessed based on academic readiness appropriate to their age/level",
+        "Previous academic performance is considered for transfer students",
+        "Assessment includes literacy, numeracy, and reasoning"
+      ],
+      "behavioral": [
+        "Students must demonstrate respect for authority and rules",
+        "Willingness to embrace Islamic values and school discipline",
+        "Good character references from previous schools"
+      ]
+    },
+    "programs": [
+      {
+        "id": "nursery",
+        "name": "Nursery",
+        "ageRange": "3-5 years",
+        "description": "Foundation years focusing on early development and Islamic values introduction"
+      },
+      {
+        "id": "primary",
+        "name": "Primary School",
+        "ageRange": "6-13 years",
+        "description": "Comprehensive Islamic and secular education from P1-P7"
+      }
+    ],
+    "dayVsBoarding": {
+      "title": "Day vs Boarding",
+      "day": {
+        "title": "Day Section",
+        "description": "Students attend during school hours and return home daily",
+        "features": [
+          "Flexible family scheduling",
+          "Daily commute from home",
+          "Participation in school meals",
+          "Extended school hours support"
+        ],
+        "ideal_for": "Students with supportive home environments who prefer daily family contact"
+      },
+      "boarding": {
+        "title": "Boarding Section",
+        "description": "Students reside on campus, experiencing immersive education and community",
+        "features": [
+          "24/7 supervision and support",
+          "Built-in study time and mentorship",
+          "Strong peer community and friendships",
+          "Structured daily routine including Islamic practices",
+          "Weekend visiting arrangements"
+        ],
+        "ideal_for": "Students seeking immersive education, those from distant areas, or those wanting intensive Islamic education"
+      },
+      "note": "Both sections maintain identical academic standards and curriculum. The choice depends on family circumstances and student needs."
+    },
+    "terms": {
+      "title": "School Calendar",
+      "structure": "The school year follows Uganda's national calendar with three main terms",
+      "terms_description": [
+        {
+          "name": "Term 1",
+          "period": "February - April",
+          "description": "Academic year begins with new admissions"
+        },
+        {
+          "name": "Term 2",
+          "period": "May - July",
+          "description": "Continued academic progression"
+        },
+        {
+          "name": "Term 3",
+          "period": "August - November",
+          "description": "Final term with examinations and year-end assessments"
+        }
+      ],
+      "holidays": [
+        "December - January: Long holiday",
+        "April: Two-week holiday",
+        "July-August: Two-week holiday",
+        "Public holidays observed as per national calendar"
+      ]
+    },
+    "fees": {
+      "title": "Fees & Costs",
+      "note": "Please contact the school office for detailed fee structure",
+      "includes": [
+        "Tuition (academics and Islamic studies)",
+        "School meals (lunch and snacks)",
+        "Learning materials and resources",
+        "Extracurricular activities",
+        "Boarding (for boarding students)",
+        "Insurance"
+      ],
+      "contact_prompt": "Contact us for specific fee details and payment options"
+    },
+    "cta": {
+      "title": "Ready to Enroll?",
+      "subtitle": "Take the first step toward your child's transformation",
+      "actions": [
+        {
+          "type": "contact",
+          "text": "Contact Us",
+          "phone": "+256702962984"
+        },
+        {
+          "type": "visit",
+          "text": "Schedule a School Visit",
+          "description": "Experience our campus firsthand"
+        }
+      ]
+    }
+  }
+}

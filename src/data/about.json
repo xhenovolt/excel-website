@@ -1,0 +1,94 @@
+{
+  "about": {
+    "hero": {
+      "title": "Our Story",
+      "subtitle": "Twelve years of forming young minds. One unwavering commitment: excellence with integrity.",
+      "narrative": "This school exists for a reason. Not to fill rankings or chase metrics, but to form young people who will think deeply, act with courage, and contribute meaningfully to the world."
+    },
+    "narrative_section": {
+      "chapter": "Chapter 1: Where We Come From",
+      "story": "In 2013, Sheikh Hassan Muhammad Mwaita envisioned something different. A school where Islamic values weren't separate from academics, but woven through every subject, every conversation, every moment. A place where young minds could excel intellectually while remaining spiritually grounded. What began as a dream has become a reality.",
+      "founding": "Founded on a simple conviction: education is not the transmission of information, but the formation of character. Over twelve years, we have grown from a small initiative to one of Eastern Uganda's most respected educational institutions, serving 250+ students from diverse backgrounds."
+    },
+    "vision": {
+      "title": "We envision a world where our graduates...",
+      "statements": [
+        "think critically and act with conviction",
+        "lead with integrity and humility",
+        "serve their communities with purpose",
+        "remain anchored in Islamic values while engaging the wider world"
+      ]
+    },
+    "mission": {
+      "title": "Our commitment is clear:",
+      "statement": "We form young people through rigorous Islamic and secular education. We nurture intellectual courage, spiritual depth, and moral clarity. We prepare leaders, not just students."
+    },
+    "coreValues": [
+      {
+        "id": "integrity",
+        "title": "Integrity",
+        "description": "We don't believe in shortcuts. Integrity is not negotiable—it's the foundation of everything we do."
+      },
+      {
+        "id": "depth",
+        "title": "Intellectual Depth",
+        "description": "We value rigorous thinking over surface-level learning. Our students learn to ask hard questions and think critically."
+      },
+      {
+        "id": "faith",
+        "title": "Rooted in Faith",
+        "description": "Islamic values are not a subject we teach; they are the lens through which we see the world. They shape how we learn, lead, and serve."
+      },
+      {
+        "id": "wholeness",
+        "title": "The Whole Person",
+        "description": "We form the intellectual, spiritual, physical, and moral dimensions of each young person. Education is holistic or it is incomplete."
+      },
+      {
+        "id": "courage",
+        "title": "Moral Courage",
+        "description": "We cultivate young people who will stand for what is right, even when it is difficult. Courage is not the absence of fear; it is action despite it."
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "description": "We belong to one another. Students, parents, teachers, leadership—we are a community committed to one another's growth."
+      }
+    ],
+    "leadership": {
+      "title": "Our Leadership",
+      "introduction": "The school is guided by experienced educators deeply committed to Islamic education and student welfare.",
+      "members": [
+        {
+          "name": "Sheikh Hassan Muhammad Mwaita",
+          "title": "Director & Founder",
+          "image": "staff.jpg",
+          "bio": "With over 20 years of experience in Islamic education and school management, Sheikh Hassan has dedicated his life to building educational excellence grounded in Islamic values. His vision transformed a dream into a thriving institution serving the region."
+        }
+      ]
+    },
+    "discipline": {
+      "title": "A Culture of Discipline",
+      "introduction": "Discipline at Excel School is not punitive—it is constructive. We believe that discipline is an expression of care and prepares students for success.",
+      "principles": [
+        "Clear expectations: Students know what is expected of them",
+        "Consistent enforcement: Rules are applied fairly and consistently",
+        "Support and growth: Discipline is an opportunity for learning and growth",
+        "Respect and dignity: Every student is treated with respect",
+        "Parental partnership: Parents are involved in supporting school values"
+      ]
+    },
+    "achievement": {
+      "title": "Our Achievements",
+      "highlights": [
+        "98% student success rate in national examinations",
+        "250+ students from diverse backgrounds",
+        "25+ qualified and dedicated teachers",
+        "12+ years of consistent excellence",
+        "Strong reputation in the region",
+        "Multiple Hafiz graduates",
+        "Successful university placements"
+      ]
+    }
+  }
+}

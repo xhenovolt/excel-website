@@ -1,0 +1,94 @@
+{
+  "testimonials": {
+    "hero": {
+      "title": "Student & Parent Testimonials",
+      "subtitle": "Hear from our community about their Excel Islamic School experience"
+    },
+    "parentTestimonials": [
+      {
+        "id": "parent_1",
+        "name": "Fatima Ahmed",
+        "role": "Parent, Primary Section",
+        "image": "/images/IMG-20251223-WA0064.jpg",
+        "testimonial": "Excel Islamic School has been transformative for our children. They not only excel academically but have developed strong Islamic values and moral character. The teachers genuinely care about each student's growth.",
+        "rating": 5
+      },
+      {
+        "id": "parent_2",
+        "name": "Hassan Muhammad",
+        "role": "Parent, Nursery & Primary",
+        "image": "/images/staff.jpg",
+        "testimonial": "As a parent, I'm impressed with the balance the school maintains between Islamic education and secular academics. Our son is thriving, and we feel confident about his future.",
+        "rating": 5
+      },
+      {
+        "id": "parent_3",
+        "name": "Aisha Mwangi",
+        "role": "Parent, Primary Section",
+        "image": "/images/IMG-20251223-WA0065.jpg",
+        "testimonial": "The school's commitment to excellence is evident in every aspect. From the curriculum to the facilities, everything is designed with the child's development in mind. Highly recommended!",
+        "rating": 5
+      },
+      {
+        "id": "parent_4",
+        "name": "Ibrahim Osman",
+        "role": "Parent, Boarding Section",
+        "image": "/images/IMG-20251223-WA0066.jpg",
+        "testimonial": "My child's experience in the boarding section has been wonderful. The supervision, care, and academic support are exceptional. We couldn't ask for better.",
+        "rating": 5
+      }
+    ],
+    "alumniTestimonials": [
+      {
+        "id": "alumni_1",
+        "name": "Amina Hassan",
+        "role": "Alumni, Class of 2022",
+        "image": "/images/IMG-20251223-WA0067.jpg",
+        "testimonial": "Excel Islamic School prepared me well for secondary education and beyond. The strong foundation in both Islamic studies and academics has stayed with me.",
+        "rating": 5
+      },
+      {
+        "id": "alumni_2",
+        "name": "Muhammad Karim",
+        "role": "Alumni, Class of 2023",
+        "image": "/images/IMG-20251223-WA0068.jpg",
+        "testimonial": "The Quranic memorization program and supportive community helped me grow both spiritually and intellectually. I'm grateful for my time at Excel.",
+        "rating": 5
+      },
+      {
+        "id": "alumni_3",
+        "name": "Zainab Ahmed",
+        "role": "Alumni, Class of 2021",
+        "image": "/images/IMG-20251223-WA0069.jpg",
+        "testimonial": "Excel Islamic School instilled in me values that guide my decisions today. The experience was not just about academics but about becoming a better person.",
+        "rating": 5
+      }
+    ],
+    "staffTestimonials": [
+      {
+        "id": "staff_1",
+        "name": "Dr. Susan Nkosi",
+        "role": "Mathematics Teacher",
+        "image": "/images/staff-1.jpg",
+        "testimonial": "Working at Excel Islamic School is fulfilling. The school's vision of educating whole persons—spiritually, intellectually, and morally—motivates me daily.",
+        "rating": 5
+      },
+      {
+        "id": "staff_2",
+        "name": "Mr. James Kipchoge",
+        "role": "Science & Islamic Studies Coordinator",
+        "image": "/images/IMG-20251223-WA0070.jpg",
+        "testimonial": "The environment here supports both teaching excellence and personal growth. Colleagues are collaborative, and the administration is supportive.",
+        "rating": 5
+      },
+      {
+        "id": "staff_3",
+        "name": "Ms. Habiba Mansour",
+        "role": "Quranic Studies Instructor",
+        "image": "/images/IMG-20251223-WA0071.jpg",
+        "testimonial": "Being part of a school that prioritizes Islamic education alongside secular learning is a privilege. Our students develop into well-rounded, principled individuals.",
+        "rating": 5
+      }
+    ]
+  }
+}

@@ -1,26 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================
+   DESIGN DNA: Visual Identity System
+   African-rooted, globally competitive, premium
+   ============================================ */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  /* COLOR PALETTE: Premium, Intellectual, African-Modern */
+  --primary-deep: #1a3a52;        /* Deep slate-blue: trust, intelligence */
+  --primary-600: #2d5a7b;         /* Professional authority */
+  --primary-500: #3d6fa0;         /* Primary interactions */
+  
+  --secondary-warm: #a8674a;      /* Warm earth tone: African grounding */
+  --secondary-600: #8b5436;       /* Darker earth */
+  
+  --accent-gold: #d4a574;         /* Warm gold: premium, accessible */
+  --accent-highlight: #c89d69;    /* Slightly darker gold for emphasis */
+  
+  /* NEUTRALS: Carefully calibrated for premium feel */
+  --neutral-50: #f9fafb;          /* Almost white, warm tone */
+  --neutral-100: #f3f4f6;         /* Very light, used for surfaces */
+  --neutral-200: #e5e7eb;         /* Light borders */
+  --neutral-300: #d1d5db;         /* Medium-light */
+  --neutral-400: #9ca3af;         /* Medium */
+  --neutral-500: #6b7280;         /* Readable text on light */
+  --neutral-600: #4b5563;         /* Darker text */
+  --neutral-700: #374151;         /* Dark text on light backgrounds */
+  --neutral-800: #1f2937;         /* Very dark text */
+  --neutral-900: #111827;         /* Near-black */
+  
+  /* DARK MODE OVERRIDES */
+  --bg-light: #ffffff;
+  --bg-dark: #0f1419;             /* Deep, warm-toned dark */
+  --bg-dark-secondary: #1a202c;   /* Card/surface dark */
+  --text-light: #f9fafb;
+  --text-dark: #111827;
+  
+  /* STATUS COLORS (Accessible) */
+  --success-600: #059669;
+  --warning-600: #d97706;
+  --error-600: #dc2626;
+  
+  /* TYPOGRAPHY SCALE */
+  --font-size-xs: 0.75rem;        /* 12px */
+  --font-size-sm: 0.875rem;       /* 14px */
+  --font-size-base: 1rem;         /* 16px */
+  --font-size-lg: 1.125rem;       /* 18px */
+  --font-size-xl: 1.25rem;        /* 20px */
+  --font-size-2xl: 1.5rem;        /* 24px */
+  --font-size-3xl: 1.875rem;      /* 30px */
+  --font-size-4xl: 2.25rem;       /* 36px */
+  --font-size-5xl: 3rem;          /* 48px */
+  --font-size-6xl: 3.75rem;       /* 60px */
+  --font-size-7xl: 4.5rem;        /* 72px */
+  
+  /* LINE HEIGHT SCALE */
+  --line-height-tight: 1.2;       /* Headlines */
+  --line-height-normal: 1.5;      /* Body text */
+  --line-height-relaxed: 1.75;    /* Generous body */
+  --line-height-loose: 2;         /* Extra space */
+  
+  /* LETTER SPACING */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.03em;
+  
+  /* FONT WEIGHTS - Minimal variation for professionalism */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--bg-dark);
+    --foreground: var(--text-light);
+    --neutral-text: var(--neutral-300);
   }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--bg-light);
+    --foreground: var(--text-dark);
+    --neutral-text: var(--neutral-600);
+  }
+}
+
+@theme inline {
+  --color-primary: {
+    50: #f0f6fc;
+    100: #e0ecf9;
+    200: #c1d9f3;
+    300: #a2c6ed;
+    400: #83b3e7;
+    500: #3d6fa0;
+    600: #2d5a7b;
+    700: #1a3a52;
+    800: #132a40;
+    900: #0c1a28;
+  };
+  
+  --color-secondary: {
+    50: #faf7f5;
+    100: #f5efeb;
+    200: #e8dfd7;
+    300: #dbcfc3;
+    400: #c8ada5;
+    500: #a8674a;
+    600: #8b5436;
+    700: #6e4229;
+    800: #51311d;
+    900: #342010;
+  };
+  
+  --color-accent: {
+    50: #fef9f3;
+    100: #fdf3e7;
+    200: #fbe7cf;
+    300: #f9dbb7;
+    400: #f7cf9f;
+    500: #d4a574;
+    600: #c89d69;
+    700: #b8915e;
+    800: #a88553;
+    900: #987948;
+  };
+  
+  --color-neutral: {
+    50: #f9fafb;
+    100: #f3f4f6;
+    200: #e5e7eb;
+    300: #d1d5db;
+    400: #9ca3af;
+    500: #6b7280;
+    600: #4b5563;
+    700: #374151;
+    800: #1f2937;
+    900: #111827;
+  };
+}
+
+/* ============================================
+   TYPOGRAPHY SYSTEM
+   Timeless, professional, readable
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADLINE STYLES - Display font treatment */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--foreground);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);    /* 48px → 72px responsive */
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-7xl);  /* 72px on desktop */
+  }
+}
+
+h2 {
+  font-size: var(--font-size-4xl);    /* 36px → 48px responsive */
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1.25rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+h3 {
+  font-size: var(--font-size-2xl);    /* 24px → 30px responsive */
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+h4 {
+  font-size: var(--font-size-xl);     /* 20px */
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 0.75rem;
+}
+
+h5 {
+  font-size: var(--font-size-lg);     /* 18px */
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: var(--font-size-base);   /* 16px */
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* BODY TEXT - Optimized readability */
+p {
+  line-height: var(--line-height-normal);
+  margin-bottom: 1rem;
+}
+
+p.large {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+p.small {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+/* EMPHASIS TEXT */
+strong, .font-semibold {
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+}
+
+em, .font-italic {
+  font-style: italic;
+  font-weight: var(--font-weight-normal);
+}
+
+/* LISTS */
+ul, ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  line-height: var(--line-height-normal);
+  margin-bottom: 0.5rem;
+}
+
+/* LINKS */
+a {
+  color: var(--primary-500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: var(--font-weight-medium);
+}
+
+a:hover {
+  color: var(--primary-600);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* CODE BLOCKS */
+code, pre {
+  font-family: 'Courier New', monospace;
+  background: var(--neutral-100);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+/* ACCESSIBILITY: Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+  opacity: 0.7;
 }

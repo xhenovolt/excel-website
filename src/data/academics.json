@@ -1,0 +1,178 @@
+{
+  "academics": {
+    "hero": {
+      "title": "Our Academic Programs",
+      "subtitle": "Excellence in Islamic and Secular Education"
+    },
+    "nurseryProgram": {
+      "title": "Nursery Section",
+      "ageGroup": "3-5 years",
+      "description": "Early childhood is a critical period for development. Our Nursery section provides a nurturing, play-based learning environment that balances Islamic values with foundational academic skills.",
+      "focus": [
+        "Social and emotional development",
+        "Introduction to Islamic values and daily practices",
+        "Early literacy and numeracy skills",
+        "Creative and artistic expression",
+        "Play-based experiential learning"
+      ],
+      "facilities": [
+        "Child-friendly learning spaces",
+        "Prayer area for Islamic practices",
+        "Creative and arts corner",
+        "Outdoor play facilities"
+      ]
+    },
+    "primaryProgram": {
+      "title": "Primary Section",
+      "ageGroup": "6-13 years",
+      "description": "Our Primary section provides comprehensive education integrating Islamic theology with rigorous secular academics. Students develop intellectually, spiritually, and morally.",
+      "structure": "Classes P1-P7 (approximately grades 1-7 internationally)"
+    },
+    "islamicStudies": {
+      "id": "islamic_studies",
+      "title": "Islamic Studies",
+      "description": "At the heart of our curriculum is Islamic education. We teach students to understand Islam deeply and live its values authentically.",
+      "components": [
+        {
+          "name": "Quranic Studies",
+          "description": "Comprehensive study of the Quran with proper recitation (Tajweed) and understanding (Tafseer)"
+        },
+        {
+          "name": "Hadith Studies",
+          "description": "Study of the Prophet Muhammad's (peace be upon him) sayings and practices"
+        },
+        {
+          "name": "Islamic Jurisprudence (Fiqh)",
+          "description": "Understanding Islamic rulings on daily life, worship, and conduct"
+        },
+        {
+          "name": "Islamic Creed (Aqeedah)",
+          "description": "Foundation of Islamic beliefs and understanding of Allah's oneness"
+        },
+        {
+          "name": "Islamic History and Civilization",
+          "description": "Learning from the rich heritage of Islamic civilization"
+        }
+      ]
+    },
+    "quranMemorisation": {
+      "id": "quran_hifz",
+      "title": "Quran Memorisation (Hifz Program)",
+      "description": "For students with dedication and aptitude, we offer a structured Hifz program to memorise the entire Quran under expert guidance.",
+      "program": "Students in the Hifz program receive specialized instruction alongside their regular academics. They benefit from qualified instructors and a supportive learning community.",
+      "support": [
+        "One-on-one and group recitation sessions",
+        "Revision and retention techniques",
+        "Supportive community of fellow memorizers",
+        "Integration with secular academics"
+      ]
+    },
+    "secularCurriculum": {
+      "id": "secular",
+      "title": "Secular Academic Curriculum",
+      "description": "We maintain rigorous academic standards aligned with Ugandan national curriculum while exceeding expectations in student achievement.",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "description": "Problem-solving, reasoning, and analytical thinking"
+        },
+        {
+          "name": "English Language",
+          "description": "Communication, literacy, and critical thinking"
+        },
+        {
+          "name": "Sciences",
+          "description": "Biology, Chemistry, Physics - understanding the natural world"
+        },
+        {
+          "name": "Social Studies",
+          "description": "Geography, History, Civics - global citizenship"
+        },
+        {
+          "name": "Computer Studies",
+          "description": "Digital literacy and technology skills for the 21st century"
+        },
+        {
+          "name": "Languages",
+          "description": "Additional language learning opportunities"
+        }
+      ]
+    },
+    "teachingMethodology": {
+      "title": "Our Teaching Approach",
+      "description": "We employ modern, evidence-based teaching methods that engage students and promote deep learning.",
+      "approaches": [
+        {
+          "title": "Student-Centered Learning",
+          "description": "Students are active participants, not passive recipients. We encourage questions, exploration, and critical thinking."
+        },
+        {
+          "title": "Differentiation",
+          "description": "We recognize that each student learns differently. Teachers adapt instruction to meet individual needs."
+        },
+        {
+          "title": "Collaborative Learning",
+          "description": "Students work together, learning cooperation and developing social skills."
+        },
+        {
+          "title": "Assessment for Learning",
+          "description": "Regular assessment informs instruction and helps students understand their progress."
+        },
+        {
+          "title": "Integration",
+          "description": "Islamic values are woven throughout the curriculum, not taught in isolation."
+        }
+      ]
+    },
+    "facilities": [
+      {
+        "id": "classrooms",
+        "name": "Modern Classrooms",
+        "description": "Interactive learning spaces equipped with interactive boards and modern technology"
+      },
+      {
+        "id": "library",
+        "name": "Library & Resource Center",
+        "description": "Well-stocked library with extensive educational resources and research materials"
+      },
+      {
+        "id": "computer_lab",
+        "name": "Computer Lab",
+        "description": "Fully equipped computer lab with internet connectivity and modern hardware"
+      },
+      {
+        "id": "islamic_learning",
+        "name": "Islamic Learning Spaces",
+        "description": "Dedicated spaces for Islamic studies, prayer, and spiritual development"
+      },
+      {
+        "id": "science_labs",
+        "name": "Science Laboratories",
+        "description": "Fully equipped science labs for Biology, Chemistry, and Physics experiments"
+      },
+      {
+        "id": "sports_recreation",
+        "name": "Sports & Recreation",
+        "description": "Comprehensive sports facilities including football pitch, courts, and athletics track"
+      },
+      {
+        "id": "play_areas",
+        "name": "Outdoor Play Areas",
+        "description": "Secure, age-appropriate outdoor spaces for recreation and play"
+      }
+    ],
+    "extracurricular": {
+      "title": "Enrichment Activities",
+      "description": "Beyond academics, we offer diverse activities nurturing talents and building character.",
+      "activities": [
+        "Islamic clubs and Quran recitation groups",
+        "Debating and public speaking",
+        "Sports (football, volleyball, athletics)",
+        "Arts and music",
+        "Science clubs",
+        "Community service projects",
+        "Cultural events and celebrations"
+      ]
+    }
+  }
+}
