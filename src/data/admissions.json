@@ -155,6 +155,66 @@
           "description": "Experience our campus firsthand"
         }
       ]
+    },
+    "admissionsLadder": {
+      "title": "Your Admissions Journey",
+      "subtitle": "We guide you at every step. This is a conversation, not a hurdle.",
+      "message": "You are supported at every step.",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Inquiry & Exploration",
+          "icon": "MapPin",
+          "description": "Start by learning about Excel. Visit our campus, meet our team, ask questions. There's no pressure—just curiosity and exploration.",
+          "whatHappens": [
+            "School tour with staff or current parents",
+            "Informal conversation about your family's goals",
+            "Information about all available pathways"
+          ],
+          "timeline": "No deadline. Take your time."
+        },
+        {
+          "number": 2,
+          "title": "Application & Assessment",
+          "icon": "FileText",
+          "description": "When you're ready, we'll get to know your child through a gentle assessment. This helps us understand their strengths and how we can best support them.",
+          "whatHappens": [
+            "Simple application form about your family",
+            "Child's age-appropriate assessment (play-based for younger, academic for older)",
+            "No pass/fail—just understanding",
+            "Discussion of learning style and personality"
+          ],
+          "timeline": "2-3 weeks from application to assessment"
+        },
+        {
+          "number": 3,
+          "title": "Placement Discussion",
+          "icon": "Users",
+          "description": "Let's talk about which pathway fits your family best. We'll discuss day vs boarding, balanced track vs Qur'an focus, and any concerns you have.",
+          "whatHappens": [
+            "One-on-one meeting with admissions team",
+            "Discussion of assessment results and child's readiness",
+            "Clear explanation of each pathway",
+            "Questions answered about expectations and support",
+            "Timeline and next steps clarified"
+          ],
+          "timeline": "Within 1 week of assessment"
+        },
+        {
+          "number": 4,
+          "title": "Enrollment & Preparation",
+          "icon": "CheckCircle",
+          "description": "Once you've decided Excel is the right fit, we'll help you prepare. We provide checklists, schedules, and answer any last questions.",
+          "whatHappens": [
+            "Enrollment documents completion",
+            "Payment plan discussion (flexible options available)",
+            "School calendar and expectations guide",
+            "Introduction to staff and orientation",
+            "For boarding: family meeting about residential life"
+          ],
+          "timeline": "2-4 weeks before start date"
+        }
+      ]
     }
   }
 }

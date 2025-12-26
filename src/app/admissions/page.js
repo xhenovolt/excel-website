@@ -6,21 +6,34 @@ import { CheckCircle, Calendar, FileText, UserCheck } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
+import PathSelector from '@/components/PathSelector';
+import AdmissionsLadder from '@/components/AdmissionsLadder';
 
 export default function AdmissionsPage() {
   const [data, setData] = useState(null);
+  const [academicsData, setAcademicsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/admissions');
-        if (!response.ok) throw new Error('Failed to fetch');
-        const json = await response.json();
-        setData(json);
+        const [admissionsRes, academicsRes] = await Promise.all([
+          fetch('/api/admissions'),
+          fetch('/api/academics'),
+        ]);
+
+        if (!admissionsRes.ok || !academicsRes.ok) {
+          throw new Error('Failed to fetch');
+        }
+
+        const admissionsJson = await admissionsRes.json();
+        const academicsJson = await academicsRes.json();
+
+        setData(admissionsJson);
+        setAcademicsData(academicsJson);
       } catch (err) {
-        console.error('Error fetching admissions data:', err);
+        console.error('Error fetching data:', err);
         setError(err.message);
       } finally {
         setLoading(false);
@@ -386,6 +399,16 @@ export default function AdmissionsPage() {
           </motion.div>
         </div>
       </div>
+
+      {/* Admissions Ladder - Fear Reduction */}
+      {data?.admissions?.admissionsLadder && (
+        <AdmissionsLadder data={data.admissions.admissionsLadder} />
+      )}
+
+      {/* Path Selector - Full Version on Admissions Page */}
+      {academicsData?.academics?.pathways && (
+        <PathSelector data={academicsData.academics.pathways} />
+      )}
 
       <Footer />
       <FloatingActionButton />

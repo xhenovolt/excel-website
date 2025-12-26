@@ -559,6 +559,95 @@
           "image": "student-teamwork.jpg"
         }
       ]
+    },
+    "pathways": {
+      "title": "Choose Your Path",
+      "subtitle": "Every family is unique. Find the approach that fits your child's needs.",
+      "description": "We offer different pathways because one size doesn't fit all. Below, you'll find details about each option to help you make the choice that's right for your family.",
+      "paths": [
+        {
+          "id": "day-balanced",
+          "icon": "Home",
+          "title": "Day School - Balanced Track",
+          "shortDescription": "Integrated Islamic and secular education, daily commute",
+          "whoItIsFor": "Families seeking rigorous academics combined with Islamic values, with daily family time",
+          "dailyRhythm": {
+            "morning": "7:30am - Arrival, Islamic greeting circle",
+            "midday": "12:00pm - Zuhr prayer, lunch",
+            "afternoon": "3:00pm - Final activities and dismissal"
+          },
+          "keyExpectations": [
+            "Regular attendance crucial for learning continuity",
+            "Family supports Islamic practice at home",
+            "Student engages in both academic and character development",
+            "Parents participate in school community events"
+          ],
+          "learningApproach": "Equal emphasis on Islamic theology and secular subjects in integrated curriculum",
+          "supportSystem": "Daily mentorship, strong home-school communication"
+        },
+        {
+          "id": "day-hifz",
+          "icon": "BookOpen",
+          "title": "Day School - Qur'an Memorisation Track",
+          "shortDescription": "Intensive Qur'an focus with academics, daily commute",
+          "whoItIsFor": "Families with strong Islamic commitment seeking Qur'an memorisation alongside rigorous academics",
+          "dailyRhythm": {
+            "morning": "7:00am - Qur'an class and revision",
+            "midday": "12:00pm - Zuhr prayer, lunch, additional Hifz session",
+            "afternoon": "3:00pm - Secular academics and Islamic studies"
+          },
+          "keyExpectations": [
+            "Daily home Qur'an practice (30-60 minutes) required",
+            "Strong parental support for Islamic learning",
+            "Commitment to the memorisation journey (3-5 years)",
+            "Flexible timeline - students progress at their pace"
+          ],
+          "learningApproach": "Qur'an memorisation as primary focus with complementary secular education",
+          "supportSystem": "Dedicated Hifz instructors, progress tracking, family guidance"
+        },
+        {
+          "id": "boarding-balanced",
+          "icon": "Users",
+          "title": "Boarding School - Balanced Track",
+          "shortDescription": "Immersive education with integrated curriculum, residential",
+          "whoItIsFor": "Families seeking comprehensive character development and intensive academic environment",
+          "dailyRhythm": {
+            "morning": "6:00am - Fajr prayer, breakfast, first academic session",
+            "afternoon": "12:00pm - Zuhr prayer, lunch, continued academics and activities",
+            "evening": "5:00pm onwards - Study time, Islamic learning, dinner, evening prayer"
+          },
+          "keyExpectations": [
+            "Student embraces residential community",
+            "Regular communication through scheduled calls/visits",
+            "Weekend visits encouraged but not mandatory",
+            "Trust in school's comprehensive care system",
+            "Engagement in boarding community activities"
+          ],
+          "learningApproach": "Immersive 24/7 learning environment with structured routine",
+          "supportSystem": "24/7 supervision, boarding staff mentorship, structured study and community"
+        },
+        {
+          "id": "boarding-hifz",
+          "icon": "Zap",
+          "title": "Boarding School - Qur'an Memorisation Track",
+          "shortDescription": "Intensive Hifz journey with comprehensive care, residential",
+          "whoItIsFor": "Families deeply committed to Qur'an memorisation with strong Islamic values",
+          "dailyRhythm": {
+            "morning": "5:30am - Tahajjud prep, Fajr, Qur'an session 1",
+            "afternoon": "12:00pm - Zuhr, lunch, Qur'an session 2 and revision",
+            "evening": "5:00pm onwards - Secondary academics, Islamic studies, additional Hifz time"
+          },
+          "keyExpectations": [
+            "Full commitment to memorisation journey",
+            "Student ready for intensive Islamic environment",
+            "Trust in boarding schedule and priorities",
+            "Understanding that Qur'an takes primary focus",
+            "Flexibility in timeline (typically 3-5 years)"
+          ],
+          "learningApproach": "Qur'an memorisation as central with boarding community support and secondary academics",
+          "supportSystem": "Hifz specialists, peer support from other students on journey, comprehensive pastoral care"
+        }
+      ]
     }
   }
 }

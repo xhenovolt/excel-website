@@ -321,3 +321,190 @@ pre {
   background: var(--foreground);
   opacity: 0.7;
 }
+/* ============================================
+   ENHANCED SHADOW & GRADIENT UTILITIES
+   Premium visual depth and texture
+   ============================================ */
+
+/* Shadow Presets */
+@layer utilities {
+  /* Soft elevated shadow */
+  .shadow-soft {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Medium shadow for cards */
+  .shadow-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Strong shadow for elevated elements */
+  .shadow-elevated {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 16px 40px rgba(0, 0, 0, 0.16);
+  }
+
+  /* Very strong shadow for modals/overlays */
+  .shadow-deep {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16), 0 24px 64px rgba(0, 0, 0, 0.24);
+  }
+
+  /* Hover lift effect - subtle shadow transition */
+  .shadow-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .shadow-hover:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 16px 40px rgba(0, 0, 0, 0.16);
+  }
+
+  /* Dark mode shadow adjustments */
+  .dark .shadow-soft {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .dark .shadow-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .dark .shadow-elevated {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 16px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Gradient overlays */
+  .gradient-overlay-primary {
+    position: relative;
+  }
+
+  .gradient-overlay-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(45, 90, 123, 0.1), rgba(61, 111, 160, 0.05));
+    pointer-events: none;
+  }
+
+  .gradient-overlay-accent {
+    position: relative;
+  }
+
+  .gradient-overlay-accent::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(200, 157, 105, 0.05));
+    pointer-events: none;
+  }
+
+  /* Premium gradient backgrounds */
+  .bg-gradient-premium-light {
+    background: linear-gradient(135deg, 
+      rgba(245, 239, 235, 0.5) 0%, 
+      rgba(248, 244, 241, 0.5) 50%, 
+      rgba(255, 251, 248, 0.5) 100%);
+  }
+
+  .dark .bg-gradient-premium-light {
+    background: linear-gradient(135deg, 
+      rgba(26, 58, 82, 0.2) 0%, 
+      rgba(13, 42, 64, 0.1) 50%, 
+      rgba(8, 28, 43, 0.05) 100%);
+  }
+
+  .bg-gradient-premium-blue {
+    background: linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.08) 0%, 
+      rgba(6, 182, 212, 0.04) 100%);
+  }
+
+  .dark .bg-gradient-premium-blue {
+    background: linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.15) 0%, 
+      rgba(6, 182, 212, 0.08) 100%);
+  }
+
+  .bg-gradient-premium-green {
+    background: linear-gradient(135deg, 
+      rgba(16, 185, 129, 0.08) 0%, 
+      rgba(34, 197, 94, 0.04) 100%);
+  }
+
+  .dark .bg-gradient-premium-green {
+    background: linear-gradient(135deg, 
+      rgba(16, 185, 129, 0.15) 0%, 
+      rgba(34, 197, 94, 0.08) 100%);
+  }
+
+  /* Text gradient effect */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #2d5a7b 0%, #3d6fa0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dark .text-gradient-primary {
+    background: linear-gradient(135deg, #6fa3d4 0%, #8bb4db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Backdrop blur for premium feel */
+  .backdrop-blur-premium {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .dark .backdrop-blur-premium {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(31, 41, 55, 0.75);
+  }
+
+  /* Subtle animation for interactive elements */
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .float-gentle {
+    animation: float-gentle 3s ease-in-out infinite;
+  }
+
+  /* Glassmorphism effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-effect {
+    background: rgba(31, 41, 55, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Shimmer effect for loading states */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 1000px 100%;
+  }
+}

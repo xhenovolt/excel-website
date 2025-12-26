@@ -23,6 +23,7 @@ import TrustSignals from '@/components/TrustSignals';
 import PhilosophyOfEducation from '@/components/PhilosophyOfEducation';
 import InstitutionalProof from '@/components/InstitutionalProof';
 import LifeAtSchool from '@/components/LifeAtSchool';
+import PathSelector from '@/components/PathSelector';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -945,6 +946,11 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Path Selector - Help Parents Choose */}
+      {academicsData?.pathways && (
+        <PathSelector data={academicsData.pathways} />
+      )}
 
       {/* Contact Section */}
       <section
