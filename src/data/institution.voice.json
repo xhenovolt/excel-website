@@ -1,0 +1,59 @@
+{
+  "toneRules": {
+    "description": "Voice governance for all institutional communication",
+    "sentiment": "measured, certain, established",
+    "characteristics": [
+      "Short, declarative sentences",
+      "No exaggeration or hyperbole",
+      "No emotional adjectives (avoid: love, care deeply, empower, transform, unlock)",
+      "No marketing language or sales rhetoric",
+      "Avoid superlatives (best, amazing, incredible)",
+      "Facts over feelings",
+      "Responsibility over aspiration"
+    ],
+    "forbiddenWords": [
+      "empower",
+      "unlock",
+      "transform",
+      "innovative",
+      "revolutionary",
+      "amazing",
+      "incredible",
+      "journey",
+      "unleash",
+      "potential",
+      "world-class",
+      "cutting-edge",
+      "best-in-class",
+      "deep care",
+      "love deeply",
+      "passionate about"
+    ],
+    "sentenceStructure": {
+      "ideal": "Simple. Subject-verb-object. 8-15 words.",
+      "examples": [
+        "Students learn Quranic science through structured daily instruction.",
+        "Teachers maintain 1:8 student ratios during boarding hours.",
+        "Morning begins at 5:30 AM with Fajr prayer and reflection."
+      ]
+    }
+  },
+  "vocabularyConstraints": {
+    "authority": "guided, established, responsible, accountable, structured",
+    "care": "supervision, routine, attention, presence, consistent",
+    "learning": "instruction, practice, structured, disciplined, systematic",
+    "faith": "Islamic, Quranic, moral, spiritual, principled"
+  },
+  "directorMessage": {
+    "name": "Sheikhs Hassan Muhammad Mwaita",
+    "title": "Institutional Director",
+    "message": "This school operates on principle, not trend. We guide students toward intellectual rigor and moral foundation. Order and consistency protect growth."
+  },
+  "contentRenderingRules": {
+    "headings": "Capitalize title case. 4-8 words maximum.",
+    "paragraphs": "One idea per paragraph. Max 3 sentences.",
+    "lists": "Parallel structure. Action-based or fact-based.",
+    "spacing": "Generous white space. Separation of concerns.",
+    "animation": "None for authority content. Subtle transitions only for UI."
+  }
+}

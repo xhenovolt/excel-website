@@ -1,0 +1,155 @@
+{
+  "dailyLife": {
+    "description": "Daily structure from morning to evening for day and boarding students",
+    "dayStudentSchedule": [
+      {
+        "time": "6:00 AM",
+        "activity": "Arrival & Registration",
+        "description": "Students arrive. Morning check-in. Preparation for the day.",
+        "icon": "Clock",
+        "category": "routine"
+      },
+      {
+        "time": "6:30 AM",
+        "activity": "Fajr Prayer & Reflection",
+        "description": "Congregational prayer. Spiritual grounding to begin the day.",
+        "icon": "Sunrise",
+        "category": "spiritual"
+      },
+      {
+        "time": "7:00 AM",
+        "activity": "Breakfast & Community",
+        "description": "Shared meal. Social interaction. Preparation of mind and body.",
+        "icon": "Coffee",
+        "category": "routine"
+      },
+      {
+        "time": "7:45 AM - 12:30 PM",
+        "activity": "Structured Learning",
+        "description": "Quranic science, Islamic studies, Arabic language, academics. Guided instruction in small groups.",
+        "icon": "BookOpen",
+        "category": "learning"
+      },
+      {
+        "time": "12:30 PM",
+        "activity": "Dhuhr Prayer & Lunch",
+        "description": "Congregational prayer at midday. Nourishment and rest.",
+        "icon": "Sun",
+        "category": "spiritual"
+      },
+      {
+        "time": "1:30 PM - 3:30 PM",
+        "activity": "Afternoon Studies & Practice",
+        "description": "Continuation of guided learning. Memorization, practice, review.",
+        "icon": "Pencil",
+        "category": "learning"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Asr Prayer & Reflection",
+        "description": "Congregational prayer. Mental reset before dismissal preparation.",
+        "icon": "Cloud",
+        "category": "spiritual"
+      },
+      {
+        "time": "4:00 PM",
+        "activity": "Dismissal Preparation",
+        "description": "Order belongings. Review of the day. Transition to home.",
+        "icon": "ArrowRight",
+        "category": "routine"
+      }
+    ],
+    "boardingStudentSchedule": [
+      {
+        "time": "5:00 AM",
+        "activity": "Wake & Personal Preparation",
+        "description": "Orderly awakening. Ablution and cleanliness routine under supervision.",
+        "icon": "Moon",
+        "category": "routine"
+      },
+      {
+        "time": "5:30 AM",
+        "activity": "Fajr Prayer & Quranic Recitation",
+        "description": "Congregational prayer. Daily Quranic study. Spiritual foundation.",
+        "icon": "Sunrise",
+        "category": "spiritual"
+      },
+      {
+        "time": "6:30 AM",
+        "activity": "Breakfast & Dormitory Inspection",
+        "description": "Shared meal. Accountability for living space cleanliness and order.",
+        "icon": "Coffee",
+        "category": "routine"
+      },
+      {
+        "time": "7:30 AM - 12:30 PM",
+        "activity": "Core Academic & Quranic Instruction",
+        "description": "Main teaching blocks. Quranic science, Islamic jurisprudence, Arabic, academics.",
+        "icon": "BookOpen",
+        "category": "learning"
+      },
+      {
+        "time": "12:30 PM",
+        "activity": "Dhuhr Prayer & Lunch",
+        "description": "Congregational prayer. Community meal. Supervised social time.",
+        "icon": "Sun",
+        "category": "spiritual"
+      },
+      {
+        "time": "1:30 PM - 3:30 PM",
+        "activity": "Structured Study & Practice",
+        "description": "Independent study with teacher availability. Memorization, homework, revision.",
+        "icon": "Pencil",
+        "category": "learning"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Asr Prayer & Supervised Activity",
+        "description": "Congregational prayer. Recreation or community service under supervision.",
+        "icon": "Cloud",
+        "category": "routine"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Snack & Rest Period",
+        "description": "Light refreshment. Quiet time for reflection and recovery.",
+        "icon": "Utensils",
+        "category": "routine"
+      },
+      {
+        "time": "6:00 PM - 7:30 PM",
+        "activity": "Evening Review & Quran Study",
+        "description": "Teacher-led review sessions. Memorization continuation. Accountability check-ins.",
+        "icon": "Moon",
+        "category": "learning"
+      },
+      {
+        "time": "7:30 PM",
+        "activity": "Maghrib Prayer & Dinner",
+        "description": "Congregational prayer. Evening meal. Communal conversation.",
+        "icon": "Sunset",
+        "category": "spiritual"
+      },
+      {
+        "time": "8:30 PM - 9:30 PM",
+        "activity": "Evening Instruction & Moral Guidance",
+        "description": "Circle discussions. Islamic principles applied to daily life. Character formation.",
+        "icon": "Users",
+        "category": "guidance"
+      },
+      {
+        "time": "9:30 PM",
+        "activity": "Preparation for Sleep",
+        "description": "Isha prayer. Evening recitation. Orderly dormitory closure. Rest.",
+        "icon": "Bed",
+        "category": "routine"
+      }
+    ],
+    "categoryDescriptions": {
+      "routine": "Structure and order",
+      "spiritual": "Islamic foundation",
+      "learning": "Academic and Quranic instruction",
+      "guidance": "Moral and character development"
+    }
+  }
+}

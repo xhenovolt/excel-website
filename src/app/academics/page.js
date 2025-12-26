@@ -112,7 +112,7 @@ export default function AcademicsPage() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 leading-relaxed font-light"
           >
-            We combine rigorous Islamic theology with world-class secular education. Not two separate tracks, but one integrated journey toward excellence.
+            We combine rigorous Islamic theology with rigorous secular education. Not two separate tracks, but one integrated journey toward excellence.
           </motion.p>
         </div>
       </motion.section>
@@ -198,7 +198,7 @@ export default function AcademicsPage() {
               transition={{ delay: 0.2 }}
               className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-light mb-12"
             >
-              Each program below combines rigorous Islamic education with world-class secular academics. Click to expand and discover our approach to teaching methodology, assessment philosophy, and character development.
+              Each program below combines rigorous Islamic education with rigorous secular academics. Click to expand and discover our approach to teaching methodology, assessment philosophy, and character development.
             </motion.p>
 
             <div className="space-y-8">

@@ -8,19 +8,25 @@ import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
 import PathSelector from '@/components/PathSelector';
 import AdmissionsLadder from '@/components/AdmissionsLadder';
+import DailyLifeStructure from '@/components/DailyLifeStructure';
+import SupervisionCareSignals from '@/components/SupervisionCareSignals';
 
 export default function AdmissionsPage() {
   const [data, setData] = useState(null);
   const [academicsData, setAcademicsData] = useState(null);
+  const [dailyLifeData, setDailyLifeData] = useState(null);
+  const [supervisionData, setSupervisionData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [admissionsRes, academicsRes] = await Promise.all([
+        const [admissionsRes, academicsRes, dailyLifeRes, supervisionRes] = await Promise.all([
           fetch('/api/admissions'),
           fetch('/api/academics'),
+          fetch('/api/dailyLife'),
+          fetch('/api/supervision'),
         ]);
 
         if (!admissionsRes.ok || !academicsRes.ok) {
@@ -29,9 +35,13 @@ export default function AdmissionsPage() {
 
         const admissionsJson = await admissionsRes.json();
         const academicsJson = await academicsRes.json();
+        const dailyLifeJson = await dailyLifeRes.json();
+        const supervisionJson = await supervisionRes.json();
 
         setData(admissionsJson);
         setAcademicsData(academicsJson);
+        setDailyLifeData(dailyLifeJson);
+        setSupervisionData(supervisionJson);
       } catch (err) {
         console.error('Error fetching data:', err);
         setError(err.message);
@@ -408,6 +418,16 @@ export default function AdmissionsPage() {
       {/* Path Selector - Full Version on Admissions Page */}
       {academicsData?.academics?.pathways && (
         <PathSelector data={academicsData.academics.pathways} />
+      )}
+
+      {/* Daily Life Structure - Show Student Day */}
+      {dailyLifeData && (
+        <DailyLifeStructure data={dailyLifeData} variant="home" />
+      )}
+
+      {/* Supervision & Care Signals - Short version for admissions */}
+      {supervisionData && (
+        <SupervisionCareSignals data={supervisionData} variant="admissions" />
       )}
 
       <Footer />

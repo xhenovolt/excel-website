@@ -24,6 +24,9 @@ import PhilosophyOfEducation from '@/components/PhilosophyOfEducation';
 import InstitutionalProof from '@/components/InstitutionalProof';
 import LifeAtSchool from '@/components/LifeAtSchool';
 import PathSelector from '@/components/PathSelector';
+import DailyLifeStructure from '@/components/DailyLifeStructure';
+import SupervisionCareSignals from '@/components/SupervisionCareSignals';
+import DirectorPresence from '@/components/DirectorPresence';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -273,24 +276,36 @@ export default function Home() {
   const [schoolData, setSchoolData] = useState(null);
   const [academicsData, setAcademicsData] = useState(null);
   const [aboutData, setAboutData] = useState(null);
+  const [dailyLifeData, setDailyLifeData] = useState(null);
+  const [supervisionData, setSupervisionData] = useState(null);
+  const [institutionData, setInstitutionData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [schoolRes, academicsRes, aboutRes] = await Promise.all([
+        const [schoolRes, academicsRes, aboutRes, dailyLifeRes, supervisionRes, institutionRes] = await Promise.all([
           fetch('/api/school'),
           fetch('/api/academics'),
-          fetch('/api/about')
+          fetch('/api/about'),
+          fetch('/api/dailyLife'),
+          fetch('/api/supervision'),
+          fetch('/api/institution'),
         ]);
 
         const schoolJson = await schoolRes.json();
         const academicsJson = await academicsRes.json();
         const aboutJson = await aboutRes.json();
+        const dailyLifeJson = await dailyLifeRes.json();
+        const supervisionJson = await supervisionRes.json();
+        const institutionJson = await institutionRes.json();
 
         setSchoolData(schoolJson.school);
         setAcademicsData(academicsJson.academics || academicsJson);
         setAboutData(aboutJson.about || aboutJson);
+        setDailyLifeData(dailyLifeJson);
+        setSupervisionData(supervisionJson);
+        setInstitutionData(institutionJson);
       } catch (error) {
         console.error('Failed to fetch data:', error);
       } finally {
@@ -491,6 +506,11 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Director's Presence - Institutional Authority */}
+      {institutionData && (
+        <DirectorPresence data={institutionData} variant="home" />
+      )}
 
       {/* Trust Signals Section */}
       <section className="py-20 md:py-28 px-4 md:px-8 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-900">
@@ -950,6 +970,16 @@ export default function Home() {
       {/* Path Selector - Help Parents Choose */}
       {academicsData?.pathways && (
         <PathSelector data={academicsData.pathways} />
+      )}
+
+      {/* Daily Life Structure - Transparency & Order */}
+      {dailyLifeData && (
+        <DailyLifeStructure data={dailyLifeData} variant="home" />
+      )}
+
+      {/* Supervision & Care Signals - Parent Reassurance */}
+      {supervisionData && (
+        <SupervisionCareSignals data={supervisionData} variant="admissions" />
       )}
 
       {/* Contact Section */}

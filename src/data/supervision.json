@@ -1,0 +1,73 @@
+{
+  "supervision": {
+    "description": "Supervision and care signals that communicate order, attention, and moral safety",
+    "signals": [
+      {
+        "id": "ratio",
+        "title": "Teacher-to-Student Attention",
+        "icon": "Users",
+        "details": [
+          "1 teacher per 8 students during instruction",
+          "Continuous presence during structured time",
+          "Individual progress monitoring",
+          "Written feedback every two weeks"
+        ]
+      },
+      {
+        "id": "boarding_supervision",
+        "title": "Boarding Supervision Routines",
+        "icon": "Shield",
+        "details": [
+          "Adult presence in dormitories at all times",
+          "Morning and evening wellness checks",
+          "Accountability for location and activity",
+          "Clear reporting procedures for concerns"
+        ]
+      },
+      {
+        "id": "moral_guidance",
+        "title": "Moral Guidance Moments",
+        "icon": "Compass",
+        "details": [
+          "Guided reflection circles twice weekly",
+          "Character discussion tied to Islamic principles",
+          "Accountability partnerships between students",
+          "Integration of ethics into daily instruction"
+        ]
+      },
+      {
+        "id": "safety_protocols",
+        "title": "Safety & Accountability Protocols",
+        "icon": "Lock",
+        "details": [
+          "Clear behavioral expectations documented",
+          "Graduated response system for concerns",
+          "Parent communication at each stage",
+          "Student voice in community governance"
+        ]
+      },
+      {
+        "id": "nutrition",
+        "title": "Nutrition & Health Oversight",
+        "icon": "Apple",
+        "details": [
+          "Nutritionally planned meals three times daily",
+          "Health screening at intake and annually",
+          "Medication management protocols",
+          "Physical activity integrated into schedule"
+        ]
+      },
+      {
+        "id": "communication",
+        "title": "Parent Communication Structure",
+        "icon": "MessageSquare",
+        "details": [
+          "Weekly progress updates via email",
+          "Monthly parent consultation calls",
+          "Transparent incident reporting",
+          "Family involvement in planning discussions"
+        ]
+      }
+    ]
+  }
+}

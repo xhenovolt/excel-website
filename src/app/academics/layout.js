@@ -4,7 +4,7 @@ export const metadata = {
   keywords: 'academics, curriculum, Islamic studies, Quran, Hifz, primary education',
   openGraph: {
     title: 'Our Academic Programs | Excel Islamic School',
-    description: 'World-class Islamic and secular education from Nursery to Primary.',
+    description: 'Rigorous Islamic and secular education from Nursery to Primary.',
     url: 'https://excelislamicschool.com/academics',
     type: 'website'
   }

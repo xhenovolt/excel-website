@@ -8,21 +8,33 @@ import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
 import TrustSignals from '@/components/TrustSignals';
 import InstitutionalProof from '@/components/InstitutionalProof';
+import DirectorPresence from '@/components/DirectorPresence';
+import SupervisionCareSignals from '@/components/SupervisionCareSignals';
 
 export default function AboutPage() {
   const [data, setData] = useState(null);
+  const [institutionData, setInstitutionData] = useState(null);
+  const [supervisionData, setSupervisionData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/about');
-        if (!response.ok) throw new Error('Failed to fetch');
-        const json = await response.json();
+        const [aboutRes, institutionRes, supervisionRes] = await Promise.all([
+          fetch('/api/about'),
+          fetch('/api/institution'),
+          fetch('/api/supervision'),
+        ]);
+        if (!aboutRes.ok) throw new Error('Failed to fetch');
+        const json = await aboutRes.json();
+        const institutionJson = await institutionRes.json();
+        const supervisionJson = await supervisionRes.json();
         setData(json);
+        setInstitutionData(institutionJson);
+        setSupervisionData(supervisionJson);
       } catch (err) {
-        console.error('Error fetching about data:', err);
+        console.error('Error fetching data:', err);
         setError(err.message);
       } finally {
         setLoading(false);
@@ -415,6 +427,16 @@ export default function AboutPage() {
             
             <TrustSignals variant="cards" />
           </motion.section>
+
+          {/* Director's Presence - Full Authority */}
+          {institutionData && (
+            <DirectorPresence data={institutionData} variant="about" />
+          )}
+
+          {/* Supervision & Care Signals - Full transparency */}
+          {supervisionData && (
+            <SupervisionCareSignals data={supervisionData} variant="about" />
+          )}
         </div>
       </div>
 
