@@ -4,10 +4,43 @@
       "title": "Our Academic Programs",
       "subtitle": "Excellence in Islamic and Secular Education"
     },
+    "philosophyOfEducation": {
+      "title": "Philosophy of Education",
+      "subtitle": "The Foundation of Everything We Do",
+      "overview": "Education at Excel is not the transmission of information alone. It is the formation of young people—intellectually, morally, and spiritually. We believe in balance: tradition and future, faith and reason, discipline and growth.",
+      "pillars": [
+        {
+          "id": "deen_tradition",
+          "title": "Rooted in Deen",
+          "description": "Islamic values form the lens through which we engage with all knowledge. Our students understand that Islam is not separate from learning—it guides it, enriches it, and gives it purpose.",
+          "details": "Quranic wisdom, prophetic example, and Islamic jurisprudence inform our approach to every subject, relationship, and decision."
+        },
+        {
+          "id": "intellectual_depth",
+          "title": "Intellectual Courage",
+          "description": "We cultivate young minds that question, explore, and think critically. Knowledge without understanding is incomplete.",
+          "details": "Students learn to engage with rigorous academics, analyze information, and form reasoned judgments grounded in evidence and principle."
+        },
+        {
+          "id": "character_formation",
+          "title": "Formation of Character",
+          "description": "Grades alone do not define success. We measure our impact by the character, integrity, and courage our students develop.",
+          "details": "Through daily practice, mentorship, and community, students learn humility, responsibility, and the moral courage to do what is right."
+        },
+        {
+          "id": "future_readiness",
+          "title": "Prepared for the Future",
+          "description": "While honoring tradition, we equip students with 21st-century skills and knowledge.",
+          "details": "From digital literacy to critical thinking, from collaboration to innovation, students are ready to navigate and shape tomorrow's world."
+        }
+      ],
+      "summary": "We do not educate for tests. We educate for life. The measure of our success is not how our students perform in examinations, but how they live, lead, and serve when they leave these halls."
+    },
     "nurseryProgram": {
       "title": "Nursery Section",
       "ageGroup": "3-5 years",
       "description": "Early childhood is a critical period for development. Our Nursery section provides a nurturing, play-based learning environment that balances Islamic values with foundational academic skills.",
+      "overview": "Awakening young minds with gentleness and purpose.",
       "focus": [
         "Social and emotional development",
         "Introduction to Islamic values and daily practices",
@@ -15,6 +48,9 @@
         "Creative and artistic expression",
         "Play-based experiential learning"
       ],
+      "teachingMethodology": "We honor childhood. Our approach is play-based, recognizing that young children learn through exploration and imitation. Teachers guide gently, creating safe spaces for discovery while instilling Islamic values through daily practice.",
+      "assessment": "We observe and document growth in social, emotional, and cognitive areas. Conversations with parents focus on development, not performance metrics.",
+      "characterDevelopment": "At this foundational stage, we emphasize kindness, sharing, respect for teachers and peers, and a growing awareness of Islamic practices like prayer and gratitude.",
       "facilities": [
         "Child-friendly learning spaces",
         "Prayer area for Islamic practices",
@@ -26,12 +62,253 @@
       "title": "Primary Section",
       "ageGroup": "6-13 years",
       "description": "Our Primary section provides comprehensive education integrating Islamic theology with rigorous secular academics. Students develop intellectually, spiritually, and morally.",
-      "structure": "Classes P1-P7 (approximately grades 1-7 internationally)"
+      "structure": "Classes P1-P7 (approximately grades 1-7 internationally)",
+      "overview": "Building foundations of knowledge, faith, and character that will sustain a lifetime of learning."
+    },
+    "learningJourney": {
+      "title": "The Learning Journey",
+      "subtitle": "How your child grows with us",
+      "stages": [
+        {
+          "id": "nursery_stage",
+          "name": "Nursery Foundation",
+          "ageRange": "Ages 3-5",
+          "duration": "2-3 years",
+          "focus": "Play-based Learning",
+          "keyAreas": [
+            "Social and emotional development",
+            "Introduction to Islamic values",
+            "Early literacy and numeracy",
+            "Creative expression"
+          ],
+          "skillsDeveloped": [
+            "Confidence in social settings",
+            "Familiarity with Islamic practices",
+            "Basic reading and counting",
+            "Imagination and creativity"
+          ],
+          "image": "nursery-learning.jpg"
+        },
+        {
+          "id": "junior_primary",
+          "name": "Junior Primary",
+          "ageRange": "Ages 6-8",
+          "duration": "3 years (P1-P3)",
+          "focus": "Foundation Building",
+          "keyAreas": [
+            "Literacy and numeracy consolidation",
+            "Islamic studies foundations",
+            "Scientific thinking",
+            "Character values"
+          ],
+          "skillsDeveloped": [
+            "Independent reading and writing",
+            "Mathematical reasoning",
+            "Islamic knowledge application",
+            "Teamwork and respect"
+          ],
+          "image": "junior-primary.jpg"
+        },
+        {
+          "id": "senior_primary",
+          "name": "Senior Primary",
+          "ageRange": "Ages 9-13",
+          "duration": "4 years (P4-P7)",
+          "focus": "Depth and Independence",
+          "keyAreas": [
+            "Advanced academics across all subjects",
+            "Deep Islamic understanding",
+            "Critical thinking",
+            "Leadership development"
+          ],
+          "skillsDeveloped": [
+            "Advanced problem-solving",
+            "Islamic jurisprudence understanding",
+            "Research and inquiry skills",
+            "Self-discipline and initiative"
+          ],
+          "image": "senior-primary.jpg"
+        },
+        {
+          "id": "hifz_path",
+          "name": "Qur'an Memorisation Path",
+          "ageRange": "Ages 7-16",
+          "duration": "3-5 years (parallel to academics)",
+          "focus": "Quranic Mastery",
+          "keyAreas": [
+            "Systematic memorisation",
+            "Tajweed (proper recitation)",
+            "Understanding (Tafseer)",
+            "Spiritual connection"
+          ],
+          "skillsDeveloped": [
+            "Complete Quranic memorisation",
+            "Perfect recitation",
+            "Deep Quranic understanding",
+            "Spiritual maturity"
+          ],
+          "image": "hifz-learning.jpg"
+        }
+      ]
+    },
+    "dailyStructure": {
+      "title": "How a Day Works",
+      "description": "Structure creates space for learning. Here's what a typical school day looks like.",
+      "streams": [
+        {
+          "id": "islamic_daily",
+          "name": "Islamic Studies Daily Rhythm",
+          "timing": [
+            {
+              "time": "6:30 AM - 7:00 AM",
+              "activity": "Fajr prayer and Qur'an recitation",
+              "purpose": "Spiritual grounding and daily Qur'anic connection"
+            },
+            {
+              "time": "7:00 AM - 8:00 AM",
+              "activity": "Islamic Studies classes",
+              "purpose": "Quran, Hadith, Fiqh, Aqeedah instruction"
+            },
+            {
+              "time": "10:30 AM - 11:00 AM",
+              "activity": "Dhuhur (noon) prayer with reflection",
+              "purpose": "Spiritual practice integrated into the day"
+            },
+            {
+              "time": "3:00 PM - 3:30 PM",
+              "activity": "Asr (afternoon) prayer and Quranic review",
+              "purpose": "Reinforcement of Islamic learning through practice"
+            },
+            {
+              "time": "5:30 PM - 6:00 PM",
+              "activity": "Maghrib (evening) prayer and Islamic values discussion",
+              "purpose": "Reflection on daily Islamic lessons"
+            }
+          ]
+        },
+        {
+          "id": "secular_daily",
+          "name": "Secular Curriculum Daily Rhythm",
+          "timing": [
+            {
+              "time": "8:00 AM - 10:30 AM",
+              "activity": "Core academics: Mathematics and English",
+              "purpose": "Foundational subjects with focused instruction"
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "activity": "Sciences, Social Studies, Languages",
+              "purpose": "Diverse subject engagement with hands-on learning"
+            },
+            {
+              "time": "1:00 PM - 2:00 PM",
+              "activity": "Lunch and supervised play",
+              "purpose": "Physical activity and social development"
+            },
+            {
+              "time": "2:00 PM - 3:30 PM",
+              "activity": "Arts, Physical Education, Computer Studies",
+              "purpose": "Creative and practical skill development"
+            },
+            {
+              "time": "3:30 PM - 5:00 PM",
+              "activity": "Guided study and homework support",
+              "purpose": "Consolidation of learning with teacher guidance"
+            }
+          ]
+        },
+        {
+          "id": "hifz_daily",
+          "name": "Qur'an Memorisation Daily Rhythm",
+          "timing": [
+            {
+              "time": "5:30 AM - 6:30 AM",
+              "activity": "Hifz recitation session (one-on-one)",
+              "purpose": "Daily memorisation and revision with qualified instructor"
+            },
+            {
+              "time": "7:00 AM - 8:00 AM",
+              "activity": "Islamic Studies + Hifz integration",
+              "purpose": "Understanding context of memorised verses"
+            },
+            {
+              "time": "3:30 PM - 4:30 PM",
+              "activity": "Hifz study and peer revision",
+              "purpose": "Consolidation and community support"
+            },
+            {
+              "time": "After 5:30 PM",
+              "activity": "Evening Qur'anic reflection",
+              "purpose": "Spiritual connection with memorised material"
+            }
+          ]
+        }
+      ]
+    },
+    "graduateOutcomes": {
+      "title": "What Our Graduates Become",
+      "subtitle": "Direction, not noise",
+      "outcomes": [
+        {
+          "id": "thinking",
+          "icon": "Lightbulb",
+          "title": "Critical Thinkers",
+          "description": "They ask good questions. They understand the 'why' behind knowledge. They don't accept information passively."
+        },
+        {
+          "id": "character",
+          "icon": "Heart",
+          "title": "People of Character",
+          "description": "They hold themselves to high standards. Integrity is their default. They do the right thing, even when no one is watching."
+        },
+        {
+          "id": "faith",
+          "icon": "BookOpen",
+          "title": "Grounded in Faith",
+          "description": "They understand Islam as a comprehensive way of living. Their faith informs their choices and guides their values."
+        },
+        {
+          "id": "discipline",
+          "icon": "Zap",
+          "title": "Disciplined Learners",
+          "description": "They know how to learn. They take responsibility for their education. They persist when things are difficult."
+        },
+        {
+          "id": "leadership",
+          "icon": "Users",
+          "title": "Natural Leaders",
+          "description": "They serve others. They think beyond themselves. They inspire their peers through example and humility."
+        },
+        {
+          "id": "future",
+          "icon": "Globe",
+          "title": "Ready for Tomorrow",
+          "description": "They have the skills, knowledge, and mindset to navigate secondary education, university, and meaningful work with confidence."
+        }
+      ],
+      "preparedPaths": [
+        {
+          "name": "Secondary Education",
+          "description": "Strong academic foundation for O-Level and A-Level study"
+        },
+        {
+          "name": "Islamic Leadership",
+          "description": "Foundation for Qur'anic scholars, teachers, and religious leaders"
+        },
+        {
+          "name": "Professional Fields",
+          "description": "Medicine, engineering, business, education—any field requiring discipline and integrity"
+        }
+      ]
     },
     "islamicStudies": {
       "id": "islamic_studies",
       "title": "Islamic Studies",
       "description": "At the heart of our curriculum is Islamic education. We teach students to understand Islam deeply and live its values authentically.",
+      "overview": "Understanding Islam—not as dogma, but as a comprehensive way of knowing and being.",
+      "teachingMethodology": "We teach Islamic concepts contextually, helping students understand not just what Islam teaches, but why it teaches it. Students engage with Quranic verses, hadith, historical examples, and contemporary applications. Our approach encourages reflection and reasoned engagement.",
+      "assessmentPhilosophy": "We assess understanding through discussion, reflection, application, and practice. Can students explain concepts? Can they apply Islamic principles to real situations? Do they practice what they learn?",
+      "characterDevelopment": "Islamic studies is character development. Through these lessons, students internalize virtues like honesty, compassion, courage, and wisdom. They see Islam not as rules to follow reluctantly, but as a path to becoming their best selves.",
       "components": [
         {
           "name": "Quranic Studies",
@@ -59,18 +336,27 @@
       "id": "quran_hifz",
       "title": "Quran Memorisation (Hifz Program)",
       "description": "For students with dedication and aptitude, we offer a structured Hifz program to memorise the entire Quran under expert guidance.",
+      "overview": "A path of spiritual depth and intellectual challenge for the committed student.",
       "program": "Students in the Hifz program receive specialized instruction alongside their regular academics. They benefit from qualified instructors and a supportive learning community.",
+      "teachingMethodology": "Hifz is taught through systematic revision, mnemonic techniques, and careful recitation under expert supervision. Students progress at a pace suited to their capacity, not arbitrary timelines. The goal is not speed, but mastery and understanding.",
+      "assessmentPhilosophy": "Hafiz students are assessed on accuracy of recitation, understanding of the material, and consistent progress. Regular assessments and celebrations mark milestones, providing encouragement without pressure.",
+      "characterDevelopment": "The Hifz journey develops discipline, perseverance, humility, and spiritual connection. Students learn that meaningful achievement requires sustained effort and dedication. They become role models for their peers.",
       "support": [
         "One-on-one and group recitation sessions",
         "Revision and retention techniques",
         "Supportive community of fellow memorizers",
-        "Integration with secular academics"
+        "Integration with secular academics",
+        "Celebration of milestones and achievements"
       ]
     },
     "secularCurriculum": {
       "id": "secular",
       "title": "Secular Academic Curriculum",
       "description": "We maintain rigorous academic standards aligned with Ugandan national curriculum while exceeding expectations in student achievement.",
+      "overview": "Academic excellence grounded in Islamic principles and real-world relevance.",
+      "teachingMethodology": "We reject passive learning. Our classrooms are spaces of inquiry where students ask questions, conduct experiments, solve problems, and engage with ideas. Teachers guide; students discover. We use varied instructional methods—direct instruction, collaborative learning, hands-on experiments, projects—suited to different topics and learning styles.",
+      "assessmentPhilosophy": "Assessment informs instruction. Regular formative assessments help us understand where students are and adjust our teaching. Summative assessments measure mastery, not memorization. Students know what is expected and how to improve.",
+      "characterDevelopment": "Through academics, students develop intellectual virtues: curiosity, attention to detail, honesty in reporting findings, respect for evidence, and persistence in solving difficult problems. They learn that knowledge comes with responsibility.",
       "subjects": [
         {
           "name": "Mathematics",
@@ -173,6 +459,107 @@
         "Community service projects",
         "Cultural events and celebrations"
       ]
+    },
+    "lifeAtSchool": {
+      "title": "Life at School",
+      "subtitle": "This is a normal day here",
+      "sections": [
+        {
+          "id": "morning",
+          "name": "Early Morning",
+          "caption": "Fajr prayer and Qur'anic connection",
+          "image": "life-morning.jpg"
+        },
+        {
+          "id": "classroom",
+          "name": "Focused Learning",
+          "caption": "Engaged students, active instruction",
+          "image": "life-classroom.jpg"
+        },
+        {
+          "id": "prayer",
+          "name": "Spiritual Practice",
+          "caption": "Dhuhur prayer integrated into the day",
+          "image": "life-prayer.jpg"
+        },
+        {
+          "id": "outdoor",
+          "name": "Recreation & Sport",
+          "caption": "Physical activity and fresh air",
+          "image": "life-sports.jpg"
+        },
+        {
+          "id": "study",
+          "name": "Guided Learning",
+          "caption": "Teacher support during study time",
+          "image": "life-study.jpg"
+        },
+        {
+          "id": "boarding",
+          "name": "Boarding Life",
+          "caption": "Community, discipline, growth",
+          "image": "life-boarding.jpg"
+        },
+        {
+          "id": "evening",
+          "name": "Evening Reflection",
+          "caption": "Prayer and Qur'anic review",
+          "image": "life-evening.jpg"
+        },
+        {
+          "id": "community",
+          "name": "Community Life",
+          "caption": "Together we learn and grow",
+          "image": "life-community.jpg"
+        }
+      ]
+    },
+    "studentSnapshots": {
+      "title": "Students at Excel",
+      "subtitle": "Silent evidence of learning",
+      "snapshots": [
+        {
+          "id": "recitation",
+          "caption": "Morning Qur'anic recitation",
+          "image": "student-recitation.jpg"
+        },
+        {
+          "id": "focused",
+          "caption": "Focused classroom learning",
+          "image": "student-focused.jpg"
+        },
+        {
+          "id": "discipline",
+          "caption": "Boarding life discipline",
+          "image": "student-boarding.jpg"
+        },
+        {
+          "id": "writing",
+          "caption": "Academic writing practice",
+          "image": "student-writing.jpg"
+        },
+        {
+          "id": "sport",
+          "caption": "Active outdoor learning",
+          "image": "student-sport.jpg"
+        },
+        {
+          "id": "prayer",
+          "caption": "Spiritual practice time",
+          "image": "student-prayer.jpg"
+        },
+        {
+          "id": "thinking",
+          "caption": "Critical thinking in action",
+          "image": "student-thinking.jpg"
+        },
+        {
+          "id": "teamwork",
+          "caption": "Collaborative problem-solving",
+          "image": "student-teamwork.jpg"
+        }
+      ]
     }
   }
 }
+

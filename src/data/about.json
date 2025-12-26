@@ -89,6 +89,54 @@
         "Multiple Hafiz graduates",
         "Successful university placements"
       ]
-    }
+    },
+    "institutionalProof": {
+      "title": "Institutional Strength",
+      "subtitle": "Established. Structured. Stable.",
+      "introduction": "Excellence is not promised overnight. It is built year by year, through consistency, commitment, and care. Here's what makes Excel a stable, legitimate institution.",
+      "sections": [
+        {
+          "id": "foundation",
+          "icon": "Building2",
+          "title": "12 Years of Service",
+          "metric": "Est. 2013",
+          "description": "More than a decade of consistent educational excellence. We are not a startup experimenting with education—we are an established institution with proven track record."
+        },
+        {
+          "id": "coverage",
+          "icon": "Layers",
+          "title": "Complete Education Spectrum",
+          "metric": "Nursery to P7",
+          "description": "We serve students from age 3 through 13 (Nursery through Primary 7). A continuous educational journey, not fragmented programs."
+        },
+        {
+          "id": "enrollment",
+          "icon": "Users",
+          "title": "Growing Community",
+          "metric": "250+ Students",
+          "description": "Parents trust us with their children. Our enrollment reflects the confidence families place in our institution and our commitment to them."
+        },
+        {
+          "id": "faculty",
+          "icon": "BookOpen",
+          "title": "Qualified Faculty",
+          "metric": "25+ Teachers",
+          "description": "Experienced, qualified educators who are not just teaching, but mentoring and forming young people."
+        },
+        {
+          "id": "accommodation",
+          "icon": "Home",
+          "title": "Boarding & Day Options",
+          "metric": "Flexible Access",
+          "description": "We serve both day and boarding students, demonstrating our capacity and commitment to families from across the region."
+        },
+        {
+          "id": "inclusion",
+          "icon": "Heart",
+          "title": "Inclusive Community",
+          "metric": "All Backgrounds",
+          "description": "We serve students from diverse ethnic, religious, and socioeconomic backgrounds. Our institution is welcoming and equitable."
+        }
+      ]    }
   }
 }

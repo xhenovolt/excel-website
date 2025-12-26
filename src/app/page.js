@@ -20,6 +20,9 @@ import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/OptimizedImage';
 import TrustSignals from '@/components/TrustSignals';
+import PhilosophyOfEducation from '@/components/PhilosophyOfEducation';
+import InstitutionalProof from '@/components/InstitutionalProof';
+import LifeAtSchool from '@/components/LifeAtSchool';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -267,16 +270,28 @@ function HeroCarousel() {
 
 export default function Home() {
   const [schoolData, setSchoolData] = useState(null);
+  const [academicsData, setAcademicsData] = useState(null);
+  const [aboutData, setAboutData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/school');
-        const data = await response.json();
-        setSchoolData(data.school);
+        const [schoolRes, academicsRes, aboutRes] = await Promise.all([
+          fetch('/api/school'),
+          fetch('/api/academics'),
+          fetch('/api/about')
+        ]);
+
+        const schoolJson = await schoolRes.json();
+        const academicsJson = await academicsRes.json();
+        const aboutJson = await aboutRes.json();
+
+        setSchoolData(schoolJson.school);
+        setAcademicsData(academicsJson.academics || academicsJson);
+        setAboutData(aboutJson.about || aboutJson);
       } catch (error) {
-        console.error('Failed to fetch school data:', error);
+        console.error('Failed to fetch data:', error);
       } finally {
         setIsLoading(false);
       }
@@ -1056,6 +1071,29 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Life at School */}
+      {academicsData?.lifeAtSchool && (
+        <LifeAtSchool
+          data={academicsData.lifeAtSchool}
+        />
+      )}
+
+      {/* Philosophy of Education - Condensed */}
+      {academicsData?.philosophyOfEducation && (
+        <PhilosophyOfEducation
+          data={academicsData.philosophyOfEducation}
+          condensed={true}
+        />
+      )}
+
+      {/* Institutional Proof - Condensed */}
+      {aboutData?.institutionalProof && (
+        <InstitutionalProof
+          data={aboutData.institutionalProof}
+          condensed={true}
+        />
+      )}
 
       {/* Footer */}
       <Footer />

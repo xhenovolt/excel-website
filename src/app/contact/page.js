@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, ChevronRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
@@ -52,8 +52,6 @@ export default function ContactPage() {
     setSubmitStatus(null);
 
     try {
-      // In production, this would send to your backend
-      // For now, we'll simulate success
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       console.log('Form submitted:', formData);
@@ -88,205 +86,230 @@ export default function ContactPage() {
 
   const contact = data?.contact || data;
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
   return (
     <>
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section - Minimal and Direct */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative pt-24 pb-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-primary-600 to-primary-600 text-white overflow-hidden"
+        className="pt-24 pb-16 px-4 md:px-8 bg-white dark:bg-neutral-900"
       >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
+        <div className="max-w-4xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            className="text-sm md:text-base font-semibold text-primary-600 dark:text-primary-500 mb-6 tracking-wide uppercase"
           >
-            {contact?.hero?.title || 'Get In Touch'}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: -20 }}
+            Get In Touch
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+            className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-neutral-900 dark:text-white mb-6"
+          >
+            {contact?.hero?.title || 'Contact Us'}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg text-neutral-600 dark:text-neutral-400"
           >
             {contact?.hero?.subtitle || ''}
           </motion.p>
         </div>
       </motion.section>
 
-      {/* Main Content */}
-      <div className="bg-white dark:bg-neutral-900 min-h-screen">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
+      {/* Main Content - Trust First */}
+      <div className="bg-neutral-50 dark:bg-neutral-950 min-h-screen">
+        <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, staggerChildren: 0.1 }}
             viewport={{ once: true }}
             className="space-y-20"
           >
-            {/* Contact Information Grid */}
-            <motion.div variants={item} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Phone */}
-              {contact?.directContact?.phone && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className="group bg-gradient-to-br from-primary-50 to-primary-100/50 dark:from-primary-900/20 dark:to-primary-800/20 rounded-xl p-6 border border-primary-200 dark:border-primary-700/50 hover:shadow-lg transition-all duration-300"
-                >
-                  <Phone className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">
-                    {contact.directContact.phone.label}
-                  </h3>
-                  <a
-                    href={`tel:${contact.directContact.phone.primary}`}
-                    className="text-primary-600 dark:text-primary-400 font-semibold hover:underline block mb-2"
+            {/* Response Expectation Banner */}
+            {contact?.directContact?.responseExpectation && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="p-6 md:p-8 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg"
+              >
+                <p className="text-blue-900 dark:text-blue-100 text-base md:text-lg font-light">
+                  <span className="font-semibold">Response Expectation:</span> {contact.directContact.responseExpectation}
+                </p>
+              </motion.div>
+            )}
+
+            {/* Direct Contact Information - Visible First */}
+            <section className="space-y-8">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-light text-neutral-900 dark:text-white mb-2">
+                  Contact Information
+                </h2>
+                <div className="w-12 h-1 bg-primary-600 dark:bg-primary-500"></div>
+              </div>
+
+              <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {/* Phone */}
+                {contact?.directContact?.phone && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="p-6 md:p-8 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
                   >
-                    {contact.directContact.phone.primary}
-                  </a>
-                  {contact.directContact.phone.secondary && (
-                    <div className="space-y-1">
-                      {contact.directContact.phone.secondary.map((num, idx) => (
+                    <div className="flex items-start gap-4">
+                      <Phone className="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                          {contact.directContact.phone.label}
+                        </h3>
                         <a
-                          key={idx}
-                          href={`tel:${num}`}
-                          className="text-neutral-600 dark:text-neutral-400 text-sm hover:text-primary-600 dark:hover:text-primary-400 block"
+                          href={`tel:${contact.directContact.phone.primary}`}
+                          className="text-primary-600 dark:text-primary-400 font-semibold hover:underline text-base block mb-2"
                         >
-                          {num}
+                          {contact.directContact.phone.primary}
                         </a>
-                      ))}
+                        {contact.directContact.phone.secondary && (
+                          <div className="space-y-1">
+                            {contact.directContact.phone.secondary.map((num, idx) => (
+                              <a
+                                key={idx}
+                                href={`tel:${num}`}
+                                className="text-neutral-600 dark:text-neutral-400 text-sm hover:text-primary-600 dark:hover:text-primary-400 block"
+                              >
+                                {num}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  )}
-                </motion.div>
-              )}
+                  </motion.div>
+                )}
 
-              {/* Email */}
-              {contact?.directContact?.email && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="group bg-gradient-to-br from-primary-50 to-primary-100/50 dark:from-primary-900/20 dark:to-primary-800/20 rounded-xl p-6 border border-primary-200 dark:border-primary-700/50 hover:shadow-lg transition-all duration-300"
-                >
-                  <Mail className="w-8 h-8 text-primary-600 dark:text-emerald-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">
-                    {contact.directContact.email.label}
-                  </h3>
-                  <a
-                    href={`mailto:${contact.directContact.email.address}`}
-                    className="text-primary-600 dark:text-emerald-400 font-semibold hover:underline"
+                {/* Email */}
+                {contact?.directContact?.email && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    className="p-6 md:p-8 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
                   >
-                    {contact.directContact.email.address}
-                  </a>
-                </motion.div>
-              )}
+                    <div className="flex items-start gap-4">
+                      <Mail className="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                          {contact.directContact.email.label}
+                        </h3>
+                        <a
+                          href={`mailto:${contact.directContact.email.address}`}
+                          className="text-primary-600 dark:text-primary-400 font-semibold hover:underline break-all"
+                        >
+                          {contact.directContact.email.address}
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
 
-              {/* WhatsApp */}
-              {contact?.directContact?.whatsapp && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="group bg-gradient-to-br from-accent-50 to-accent-100/50 dark:from-accent-900/20 dark:to-accent-800/20 rounded-xl p-6 border border-accent-200 dark:border-accent-700/50 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-8 h-8 text-accent-600 dark:text-accent-400 mb-4 group-hover:scale-110 transition-transform">
-                    💬
-                  </div>
-                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">
-                    {contact.directContact.whatsapp.label}
-                  </h3>
-                  <a
-                    href={`https://wa.me/${contact.directContact.whatsapp.number.replace(/\D/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent-600 dark:text-accent-400 font-semibold hover:underline"
+                {/* WhatsApp */}
+                {contact?.directContact?.whatsapp && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="p-6 md:p-8 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
                   >
-                    {contact.directContact.whatsapp.number}
-                  </a>
-                </motion.div>
-              )}
-            </motion.div>
+                    <div className="flex items-start gap-4">
+                      <span className="text-3xl flex-shrink-0 mt-1">💬</span>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                          {contact.directContact.whatsapp.label}
+                        </h3>
+                        <a
+                          href={`https://wa.me/${contact.directContact.whatsapp.number.replace(/\D/g, '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary-600 dark:text-primary-400 font-semibold hover:underline flex items-center gap-1"
+                        >
+                          {contact.directContact.whatsapp.number}
+                          <ChevronRight size={16} />
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+            </section>
 
             {/* Location & Hours */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-8 md:gap-12 md:grid-cols-2">
               {/* Location */}
               {contact?.location && (
-                <motion.div
-                  variants={item}
-                  className="space-y-4"
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="space-y-6"
                 >
                   <div className="flex items-start gap-3">
                     <MapPin className="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">
+                      <h3 className="text-2xl font-light text-neutral-900 dark:text-white mb-4">
                         {contact.location.title}
                       </h3>
-                      <p className="text-lg font-semibold text-neutral-700 dark:text-neutral-300">
-                        {contact.location.address}
-                      </p>
-                      <p className="text-neutral-600 dark:text-neutral-400 mt-1">
-                        {contact.location.region}
-                      </p>
-                      <p className="text-neutral-600 dark:text-neutral-400 text-sm mt-3">
-                        {contact.location.description}
-                      </p>
-                      <p className="text-neutral-600 dark:text-neutral-400 text-sm mt-2 italic">
-                        {contact.location.directions}
-                      </p>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="text-lg font-semibold text-neutral-900 dark:text-white">
+                            {contact.location.address}
+                          </p>
+                          <p className="text-neutral-600 dark:text-neutral-400">
+                            {contact.location.region}
+                          </p>
+                        </div>
+                        <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                          {contact.location.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </motion.div>
+                </motion.section>
               )}
 
               {/* Hours */}
               {contact?.hours && (
-                <motion.div
-                  variants={item}
-                  className="space-y-4"
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="space-y-6"
                 >
                   <div className="flex items-start gap-3">
-                    <Clock className="w-6 h-6 text-primary-600 dark:text-emerald-400 flex-shrink-0 mt-1" />
-                    <div className="w-full">
-                      <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-4">
+                    <Clock className="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-light text-neutral-900 dark:text-white mb-4">
                         {contact.hours.title}
                       </h3>
                       <div className="space-y-2">
                         {contact.hours.weekdays && (
-                          <div className="flex justify-between items-center py-2 border-b border-neutral-200 dark:border-neutral-700">
-                            <span className="text-neutral-700 dark:text-neutral-300">
+                          <div className="flex justify-between items-center pb-3 border-b border-neutral-200 dark:border-neutral-700">
+                            <span className="text-neutral-700 dark:text-neutral-300 font-medium">
                               {contact.hours.weekdays.day}
                             </span>
                             <span className="font-semibold text-neutral-900 dark:text-white">
@@ -295,8 +318,8 @@ export default function ContactPage() {
                           </div>
                         )}
                         {contact.hours.saturday && (
-                          <div className="flex justify-between items-center py-2 border-b border-neutral-200 dark:border-neutral-700">
-                            <span className="text-neutral-700 dark:text-neutral-300">
+                          <div className="flex justify-between items-center pb-3 border-b border-neutral-200 dark:border-neutral-700">
+                            <span className="text-neutral-700 dark:text-neutral-300 font-medium">
                               {contact.hours.saturday.day}
                             </span>
                             <span className="font-semibold text-neutral-900 dark:text-white">
@@ -305,8 +328,8 @@ export default function ContactPage() {
                           </div>
                         )}
                         {contact.hours.sunday && (
-                          <div className="flex justify-between items-center py-2">
-                            <span className="text-neutral-700 dark:text-neutral-300">
+                          <div className="flex justify-between items-center">
+                            <span className="text-neutral-700 dark:text-neutral-300 font-medium">
                               {contact.hours.sunday.day}
                             </span>
                             <span className="font-semibold text-neutral-900 dark:text-white">
@@ -316,55 +339,116 @@ export default function ContactPage() {
                         )}
                       </div>
                       {contact.hours.note && (
-                        <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-3 italic">
+                        <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-4">
                           {contact.hours.note}
                         </p>
                       )}
                     </div>
                   </div>
-                </motion.div>
+                </motion.section>
               )}
             </div>
 
-            {/* Contact Form */}
+            {/* Departments Section */}
+            {contact?.departments && (
+              <section className="space-y-8">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-light text-neutral-900 dark:text-white mb-2">
+                    {contact.departments.title}
+                  </h2>
+                  <div className="w-12 h-1 bg-primary-600 dark:bg-primary-500 mb-4"></div>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    {contact.departments.introduction}
+                  </p>
+                </div>
+
+                <div className="grid gap-6 md:gap-8">
+                  {contact.departments.sections?.map((dept, index) => (
+                    <motion.div
+                      key={dept.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.08 }}
+                      viewport={{ once: true }}
+                      className="p-6 md:p-8 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300"
+                    >
+                      <h3 className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-white mb-2">
+                        {dept.title}
+                      </h3>
+                      <p className="text-neutral-700 dark:text-neutral-300 text-sm mb-4 leading-relaxed">
+                        {dept.description}
+                      </p>
+                      <div className="space-y-2 flex flex-col">
+                        {dept.phone && (
+                          <a
+                            href={`tel:${dept.phone}`}
+                            className="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center gap-2 text-sm"
+                          >
+                            <Phone size={16} />
+                            {dept.phone}
+                          </a>
+                        )}
+                        {dept.email && (
+                          <a
+                            href={`mailto:${dept.email}`}
+                            className="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center gap-2 text-sm"
+                          >
+                            <Mail size={16} />
+                            {dept.email}
+                          </a>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Contact Form - Secondary */}
             {contact?.form && (
-              <motion.div
-                variants={item}
-                className="max-w-2xl mx-auto w-full"
-              >
-                <div className="bg-gradient-to-br from-neutral-50 to-slate-100 dark:from-neutral-800 dark:to-neutral-800/50 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-700">
-                  <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">
+              <section className="space-y-8">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-light text-neutral-900 dark:text-white mb-2">
                     {contact.form.title}
-                  </h3>
-                  <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+                  </h2>
+                  <div className="w-12 h-1 bg-primary-600 dark:bg-primary-500 mb-4"></div>
+                  <p className="text-neutral-600 dark:text-neutral-400">
                     {contact.form.description}
                   </p>
+                </div>
 
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="max-w-2xl"
+                >
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {contact.form.fields?.map((field) => (
                       <div key={field.name}>
                         <label className="block text-sm font-semibold text-neutral-900 dark:text-white mb-2">
                           {field.label}
-                          {field.required && <span className="text-red-600">*</span>}
+                          {field.required && <span className="text-red-600 ml-1">*</span>}
                         </label>
                         {field.type === 'textarea' ? (
                           <textarea
                             name={field.name}
-                            value={formData[field.name]}
+                            value={formData[field.name] || ''}
                             onChange={handleInputChange}
                             required={field.required}
                             rows="5"
-                            className="w-full px-4 py-2 rounded-lg bg-white dark:bg-neutral-700 border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-500"
+                            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-500 transition-colors"
                             placeholder={`Enter your ${field.label.toLowerCase()}`}
                           />
                         ) : (
                           <input
                             type={field.type}
                             name={field.name}
-                            value={formData[field.name]}
+                            value={formData[field.name] || ''}
                             onChange={handleInputChange}
                             required={field.required}
-                            className="w-full px-4 py-2 rounded-lg bg-white dark:bg-neutral-700 border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-500"
+                            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-white placeholder-neutral-500 dark:placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-500 transition-colors"
                             placeholder={`Enter your ${field.label.toLowerCase()}`}
                           />
                         )}
@@ -376,18 +460,18 @@ export default function ContactPage() {
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-emerald-300 rounded-lg p-3 text-sm"
+                        className="bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 rounded-lg p-4 text-sm border border-emerald-200 dark:border-emerald-800"
                       >
-                        ✓ Thank you! Your message has been sent successfully.
+                        ✓ Thank you! Your message has been sent. We will respond during school hours.
                       </motion.div>
                     )}
                     {submitStatus === 'error' && (
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 rounded-lg p-3 text-sm"
+                        className="bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300 rounded-lg p-4 text-sm border border-red-200 dark:border-red-800"
                       >
-                        ✗ An error occurred. Please try again later.
+                        ✗ An error occurred. Please try again or call us directly.
                       </motion.div>
                     )}
 
@@ -397,7 +481,7 @@ export default function ContactPage() {
                       whileTap={{ scale: 0.98 }}
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-white font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {submitting ? (
                         <>
@@ -407,51 +491,13 @@ export default function ContactPage() {
                       ) : (
                         <>
                           <Send className="w-4 h-4" />
-                          {contact.form.submit || 'Send Message'}
+                          Send Message
                         </>
                       )}
                     </motion.button>
-
-                    {contact.form.note && (
-                      <p className="text-xs text-neutral-600 dark:text-neutral-400 text-center">
-                        {contact.form.note}
-                      </p>
-                    )}
                   </form>
-                </div>
-              </motion.div>
-            )}
-
-            {/* FAQ Section */}
-            {contact?.faq && (
-              <motion.div variants={item} className="space-y-8">
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 dark:from-emerald-400 dark:to-blue-400 bg-clip-text text-transparent mb-2">
-                    {contact.faq.title}
-                  </h2>
-                  <div className="w-16 h-1 bg-gradient-to-r from-primary-600 to-primary-600"></div>
-                </div>
-
-                <div className="space-y-4">
-                  {contact.faq.questions?.map((faq, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-6 border border-neutral-200 dark:border-neutral-700"
-                    >
-                      <h3 className="font-bold text-neutral-900 dark:text-white mb-2">
-                        {faq.question}
-                      </h3>
-                      <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                </motion.div>
+              </section>
             )}
           </motion.div>
         </div>

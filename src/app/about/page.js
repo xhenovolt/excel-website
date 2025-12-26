@@ -7,6 +7,7 @@ import Navigation from '@/components/Navigation';
 import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
 import TrustSignals from '@/components/TrustSignals';
+import InstitutionalProof from '@/components/InstitutionalProof';
 
 export default function AboutPage() {
   const [data, setData] = useState(null);
@@ -384,6 +385,14 @@ export default function AboutPage() {
               We are not just preparing students for exams. We are forming young people who will think deeply about important questions, who will have the courage to stand for what is right, and who will use their education in service of something larger than themselves.
             </motion.p>
           </motion.section>
+
+          {/* Institutional Proof - Quiet Legitimacy */}
+          {about.institutionalProof && (
+            <InstitutionalProof
+              data={about.institutionalProof}
+              condensed={false}
+            />
+          )}
 
           {/* Trust Signals Section */}
           <motion.section

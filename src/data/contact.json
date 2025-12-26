@@ -1,11 +1,12 @@
 {
   "contact": {
     "hero": {
-      "title": "Get In Touch",
-      "subtitle": "We'd love to hear from you. Contact us anytime."
+      "title": "Contact Us",
+      "subtitle": "We are here to support your child's educational journey."
     },
     "directContact": {
       "title": "Contact Information",
+      "responseExpectation": "We respond within school hours (Monday-Friday, 6:00 AM - 4:00 PM). For urgent matters, call directly.",
       "phone": {
         "label": "Phone",
         "primary": "+256 702 962984",
@@ -31,8 +32,7 @@
         "latitude": 0.3849,
         "longitude": 33.8699
       },
-      "description": "Located in the heart of Eastern Uganda, our campus is easily accessible from Namutumba town center.",
-      "directions": "Contact us for detailed driving directions or landmarks"
+      "description": "Located in the heart of Eastern Uganda, accessible from Namutumba town center."
     },
     "hours": {
       "title": "School Hours",
@@ -46,38 +46,54 @@
       },
       "sunday": {
         "day": "Sunday",
-        "time": "Closed (Rest Day)"
+        "time": "Closed"
       },
       "note": "Office hours may vary during holidays"
     },
     "departments": {
-      "title": "Contact by Department",
-      "departments": [
+      "title": "Reach the Right Department",
+      "introduction": "Contact information is visible below—no forms to fill first. Call or email the department that matches your need.",
+      "sections": [
         {
-          "name": "Admissions",
-          "description": "Questions about enrollment and school programs",
-          "phone": "+256 702 962984"
+          "id": "admissions",
+          "title": "Admissions Office",
+          "description": "Questions about enrollment, school programs, admission requirements, fees, and school visits.",
+          "phone": "+256 702 962984",
+          "email": "excelislamicschoolbusembatia@gmail.com"
         },
         {
-          "name": "Academic Office",
-          "description": "Academic matters and student progress",
-          "phone": "+256 702 962984"
+          "id": "academics",
+          "title": "Academic Office",
+          "description": "Queries about academic progress, curriculum, teaching methods, student performance, and academic support.",
+          "phone": "+256 702 962984",
+          "email": "excelislamicschoolbusembatia@gmail.com"
         },
         {
-          "name": "Boarding Office",
-          "description": "Boarding-related queries",
-          "phone": "+256 702 962984"
+          "id": "administration",
+          "title": "Administration",
+          "description": "General inquiries, school policies, discipline matters, parent partnerships, and operational questions.",
+          "phone": "+256 702 962984",
+          "email": "excelislamicschoolbusembatia@gmail.com"
         },
         {
-          "name": "General Inquiries",
-          "description": "General information and visiting",
+          "id": "finance",
+          "title": "Finance & Fees",
+          "description": "Questions about tuition fees, payment plans, financial assistance, and fee schedules.",
+          "phone": "+256 702 962984",
+          "email": "excelislamicschoolbusembatia@gmail.com"
+        },
+        {
+          "id": "boarding",
+          "title": "Boarding Services",
+          "description": "Boarding requirements, accommodation, boarding life, and boarding student support.",
+          "phone": "+256 702 962984",
           "email": "excelislamicschoolbusembatia@gmail.com"
         }
       ]
     },
     "form": {
       "title": "Send us a Message",
-      "description": "Fill out the form below and we'll get back to you shortly",
+      "description": "Prefer to send a message? Fill out the form below and we'll respond during school hours.",
       "fields": [
         {
           "name": "name",

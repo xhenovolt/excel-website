@@ -6,6 +6,13 @@ import { BookOpen, Users, Trophy, Zap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
+import ExpandableSection from '@/components/ExpandableSection';
+import PhilosophyOfEducation from '@/components/PhilosophyOfEducation';
+import LearningJourney from '@/components/LearningJourney';
+import DailyStructure from '@/components/DailyStructure';
+import LifeAtSchool from '@/components/LifeAtSchool';
+import StudentSnapshots from '@/components/StudentSnapshots';
+import GraduateOutcomes from '@/components/GraduateOutcomes';
 
 export default function AcademicsPage() {
   const [data, setData] = useState(null);
@@ -113,123 +120,53 @@ export default function AcademicsPage() {
       {/* Main Content - Narrative Structure */}
       <div className="bg-white dark:bg-neutral-900 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 md:px-8 py-20 md:py-28 space-y-20 md:space-y-28">
-          {/* Three Pillars */}
-          <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="space-y-12"
-          >
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-sm md:text-base font-semibold text-primary-600 dark:text-primary-500 mb-6 tracking-wide uppercase"
-            >
-              Our Curriculum
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-8 bg-gradient-to-r from-blue-600 to-emerald-600 dark:from-blue-400 dark:to-emerald-400 bg-clip-text text-transparent"
-            >
-              Three pillars, one foundation
-            </motion.h2>
+          {/* Philosophy of Education */}
+          {academics?.philosophyOfEducation && (
+            <PhilosophyOfEducation
+              data={academics.philosophyOfEducation}
+              condensed={false}
+            />
+          )}
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-light mb-16"
-            >
-              Our curriculum is built on the integration of three equally important dimensions of learning.
-            </motion.p>
+          {/* Learning Journey Timeline */}
+          {academics?.learningJourney && (
+            <LearningJourney
+              data={academics.learningJourney}
+              condensed={false}
+            />
+          )}
 
-            {/* Three Pillars Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Islamic Theology",
-                  description: "Deep engagement with the Quran, Hadith, Fiqh, and Aqeedah. Not a subject studied in isolation, but the lens through which we understand all knowledge."
-                },
-                {
-                  title: "Secular Excellence",
-                  description: "Rigorous instruction in Mathematics, English, Sciences, and Social Studies. We prepare students for national examinations and develop their intellectual capabilities."
-                },
-                {
-                  title: "Quran Memorization",
-                  description: "Students engaged in Hifz (memorization) receive dedicated instruction alongside their regular curriculum, preserving the Word of Allah while excelling academically."
-                }
-              ].map((pillar, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="space-y-4"
-                >
-                  <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed font-light">
-                    {pillar.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
+          {/* Daily Structure */}
+          {academics?.dailyStructure && (
+            <DailyStructure
+              data={academics.dailyStructure}
+            />
+          )}
 
-          {/* How We Teach */}
-          <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="space-y-12"
-          >
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-sm md:text-base font-semibold text-primary-600 dark:text-primary-500 mb-6 tracking-wide uppercase"
-            >
-              Pedagogical Approach
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-8 bg-gradient-to-r from-emerald-600 to-green-600 dark:from-emerald-400 dark:to-green-400 bg-clip-text text-transparent"
-            >
-              How we teach matters
-            </motion.h2>
+          {/* Life at School */}
+          {academics?.lifeAtSchool && (
+            <LifeAtSchool
+              data={academics.lifeAtSchool}
+            />
+          )}
 
-            <div className="space-y-8">
-              {academics.teachingMethods && academics.teachingMethods.map((method, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="border-l-4 border-primary-500 pl-8 py-4"
-                >
-                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50 mb-2">
-                    {method.title}
-                  </h3>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed font-light">
-                    {method.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
+          {/* Student Snapshots */}
+          {academics?.studentSnapshots && (
+            <StudentSnapshots
+              data={academics.studentSnapshots}
+              variant="grid"
+            />
+          )}
 
-          {/* Grade Levels */}
+          {/* Graduate Outcomes */}
+          {academics?.graduateOutcomes && (
+            <GraduateOutcomes
+              data={academics.graduateOutcomes}
+              condensed={false}
+            />
+          )}
+
+          {/* Academic Programs - Expandable Sections */}
           <motion.section
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -249,29 +186,61 @@ export default function AcademicsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-8 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent"
+              className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-8 bg-gradient-to-r from-emerald-600 to-blue-600 dark:from-emerald-400 dark:to-blue-400 bg-clip-text text-transparent"
             >
-              From Nursery to Primary
+              Integrated academic excellence
             </motion.h2>
 
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-light mb-12"
+            >
+              Each program below combines rigorous Islamic education with world-class secular academics. Click to expand and discover our approach to teaching methodology, assessment philosophy, and character development.
+            </motion.p>
+
             <div className="space-y-8">
-              {academics.programs && academics.programs.map((program, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-8 border border-neutral-200 dark:border-neutral-700"
-                >
-                  <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50 mb-3">
-                    {program.name}
-                  </h3>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed font-light">
-                    {program.description}
-                  </p>
-                </motion.div>
-              ))}
+              {/* Nursery Program */}
+              {academics?.nurseryProgram && (
+                <ExpandableSection
+                  id="nursery"
+                  title={academics.nurseryProgram.title}
+                  overview={academics.nurseryProgram.overview}
+                  sections={[academics.nurseryProgram]}
+                />
+              )}
+
+              {/* Islamic Studies */}
+              {academics?.islamicStudies && (
+                <ExpandableSection
+                  id="islamic"
+                  title={academics.islamicStudies.title}
+                  overview={academics.islamicStudies.overview}
+                  sections={[academics.islamicStudies]}
+                />
+              )}
+
+              {/* Qur'an Memorisation */}
+              {academics?.quranMemorisation && (
+                <ExpandableSection
+                  id="hifz"
+                  title={academics.quranMemorisation.title}
+                  overview={academics.quranMemorisation.overview}
+                  sections={[academics.quranMemorisation]}
+                />
+              )}
+
+              {/* Secular Curriculum */}
+              {academics?.secularCurriculum && (
+                <ExpandableSection
+                  id="secular"
+                  title={academics.secularCurriculum.title}
+                  overview={academics.secularCurriculum.overview}
+                  sections={[academics.secularCurriculum]}
+                />
+              )}
             </div>
           </motion.section>
 
@@ -291,10 +260,10 @@ export default function AcademicsPage() {
               Our Commitment
             </motion.p>
             <h3 className="text-2xl md:text-3xl font-semibold text-neutral-900 dark:text-neutral-50">
-              We measure success differently
+              Education that forms minds, strengthens faith, and builds character
             </h3>
             <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed font-light">
-              Our students don't just pass exams—though they do, consistently achieving high success rates. They develop the habits of mind that lead to deep learning. They learn to ask questions, think critically, and understand the connection between their studies and their faith. That's what excellence really means.
+              Our students don't just pass exams—though they consistently achieve high success rates. They develop the intellectual virtues and spiritual foundation that lead to a lifetime of meaningful learning. They learn to think deeply, question thoughtfully, and understand that knowledge is a trust from Allah. That's what true excellence means.
             </p>
           </motion.section>
         </div>
