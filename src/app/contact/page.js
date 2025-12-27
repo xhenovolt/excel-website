@@ -6,9 +6,12 @@ import { Phone, Mail, MapPin, Clock, Send, ChevronRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import FloatingActionButton from '@/components/FloatingActionButton';
 import Footer from '@/components/Footer';
+import SoftActionGateway from '@/components/SoftActionGateway';
+import ReadinessCTA from '@/components/ReadinessCTA';
 
 export default function ContactPage() {
   const [data, setData] = useState(null);
+  const [ctasData, setCtasData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
@@ -24,10 +27,15 @@ export default function ContactPage() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/contact');
-        if (!response.ok) throw new Error('Failed to fetch');
-        const json = await response.json();
-        setData(json);
+        const [contactRes, ctasRes] = await Promise.all([
+          fetch('/api/contact'),
+          fetch('/api/ctas'),
+        ]);
+        if (!contactRes.ok) throw new Error('Failed to fetch');
+        const contactJson = await contactRes.json();
+        const ctasJson = await ctasRes.json();
+        setData(contactJson);
+        setCtasData(ctasJson);
       } catch (err) {
         console.error('Error fetching contact data:', err);
         setError(err.message);
@@ -503,8 +511,18 @@ export default function ContactPage() {
         </div>
       </div>
 
+      {/* Soft Action Gateway on Contact Page */}
+      {ctasData && (
+        <SoftActionGateway data={ctasData} placement="contact" />
+      )}
+
       <Footer />
       <FloatingActionButton />
+
+      {/* Readiness CTA for Contact Page */}
+      {ctasData && (
+        <ReadinessCTA data={ctasData} placement="contact" />
+      )}
     </>
   );
 }

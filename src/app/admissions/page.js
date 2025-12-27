@@ -10,23 +10,27 @@ import PathSelector from '@/components/PathSelector';
 import AdmissionsLadder from '@/components/AdmissionsLadder';
 import DailyLifeStructure from '@/components/DailyLifeStructure';
 import SupervisionCareSignals from '@/components/SupervisionCareSignals';
+import SoftActionGateway from '@/components/SoftActionGateway';
+import ReadinessCTA from '@/components/ReadinessCTA';
 
 export default function AdmissionsPage() {
   const [data, setData] = useState(null);
   const [academicsData, setAcademicsData] = useState(null);
   const [dailyLifeData, setDailyLifeData] = useState(null);
   const [supervisionData, setSupervisionData] = useState(null);
+  const [ctasData, setCtasData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [admissionsRes, academicsRes, dailyLifeRes, supervisionRes] = await Promise.all([
+        const [admissionsRes, academicsRes, dailyLifeRes, supervisionRes, ctasRes] = await Promise.all([
           fetch('/api/admissions'),
           fetch('/api/academics'),
           fetch('/api/dailyLife'),
           fetch('/api/supervision'),
+          fetch('/api/ctas'),
         ]);
 
         if (!admissionsRes.ok || !academicsRes.ok) {
@@ -37,11 +41,13 @@ export default function AdmissionsPage() {
         const academicsJson = await academicsRes.json();
         const dailyLifeJson = await dailyLifeRes.json();
         const supervisionJson = await supervisionRes.json();
+        const ctasJson = await ctasRes.json();
 
         setData(admissionsJson);
         setAcademicsData(academicsJson);
         setDailyLifeData(dailyLifeJson);
         setSupervisionData(supervisionJson);
+        setCtasData(ctasJson);
       } catch (err) {
         console.error('Error fetching data:', err);
         setError(err.message);
@@ -430,8 +436,18 @@ export default function AdmissionsPage() {
         <SupervisionCareSignals data={supervisionData} variant="admissions" />
       )}
 
+      {/* Soft Action Gateway - Respectful Next Steps */}
+      {ctasData && (
+        <SoftActionGateway data={ctasData} placement="admissions" />
+      )}
+
       <Footer />
       <FloatingActionButton />
+
+      {/* Readiness CTA for Admissions Page */}
+      {ctasData && (
+        <ReadinessCTA data={ctasData} placement="admissions" />
+      )}
     </>
   );
 }

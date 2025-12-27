@@ -11,14 +11,21 @@ import {
   MapPin,
   Instagram,
   MessageCircle,
+  Sun,
+  Moon,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/hooks/useLanguage';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { language, changeLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -73,13 +80,25 @@ export default function Navigation() {
               </span>
             </div>
 
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-900 dark:text-slate-50 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="flex items-center gap-2">
+              {/* Theme Toggle Button */}
+              <button
+                onClick={toggleTheme}
+                className="text-slate-900 dark:text-slate-50 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-slate-900 dark:text-slate-50 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -108,6 +127,41 @@ export default function Navigation() {
                   ))}
 
                   <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-3 space-y-3">
+                    {/* Language Selector */}
+                    <div className="space-y-2">
+                      <p className="text-xs uppercase font-semibold text-slate-600 dark:text-slate-400">
+                        Language
+                      </p>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => {
+                            changeLanguage('en');
+                            setIsLanguageDropdownOpen(false);
+                          }}
+                          className={`flex-1 py-2 px-3 rounded-lg font-medium transition-colors ${
+                            language === 'en'
+                              ? 'bg-primary-600 text-white'
+                              : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600'
+                          }`}
+                        >
+                          EN
+                        </button>
+                        <button
+                          onClick={() => {
+                            changeLanguage('ar');
+                            setIsLanguageDropdownOpen(false);
+                          }}
+                          className={`flex-1 py-2 px-3 rounded-lg font-medium transition-colors ${
+                            language === 'ar'
+                              ? 'bg-primary-600 text-white'
+                              : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600'
+                          }`}
+                        >
+                          AR
+                        </button>
+                      </div>
+                    </div>
+
                     <a
                       href={`tel:${contact.phone}`}
                       className="flex items-center gap-2 text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors text-sm"
@@ -225,6 +279,62 @@ export default function Navigation() {
                   </Link>
                 ))}
               </div>
+
+              {/* Language Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                  className="text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  {language.toUpperCase()}
+                </button>
+                <AnimatePresence>
+                  {isLanguageDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute right-0 mt-2 w-32 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden z-50"
+                    >
+                      <button
+                        onClick={() => {
+                          changeLanguage('en');
+                          setIsLanguageDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 py-2 text-left font-medium transition-colors ${
+                          language === 'en'
+                            ? 'bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400'
+                            : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700'
+                        }`}
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => {
+                          changeLanguage('ar');
+                          setIsLanguageDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 py-2 text-left font-medium transition-colors ${
+                          language === 'ar'
+                            ? 'bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400'
+                            : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700'
+                        }`}
+                      >
+                        العربية
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
 
               <a
                 href="tel:+256702962984"

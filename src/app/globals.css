@@ -142,7 +142,200 @@
     800: #1f2937;
     900: #111827;
   };
+
+  --color-lime-cream: {
+    100: #36420b;
+    200: #6c8415;
+    300: #a2c520;
+    400: #c3e250;
+    500: #d9ed92;
+    600: #e1f1a7;
+    700: #e8f4bd;
+    800: #f0f8d3;
+    900: #f7fbe9;
+  };
+
+  --color-light-green: {
+    100: #233b0e;
+    200: #46771c;
+    300: #6ab22a;
+    400: #8ed650;
+    500: #b5e48c;
+    600: #c4e9a2;
+    700: #d2efba;
+    800: #e1f4d1;
+    900: #f0fae8;
+  };
+
+  --color-emerald: {
+    100: #122d1c;
+    200: #245a37;
+    300: #368853;
+    400: #48b56e;
+    500: #76c893;
+    600: #90d3a7;
+    700: #acdebd;
+    800: #c8e9d3;
+    900: #e3f4e9;
+  };
+
+  --color-ocean-mist: {
+    100: #10251f;
+    200: #1f4b3e;
+    300: #2f705e;
+    400: #3f967d;
+    500: #52b69a;
+    600: #75c5ae;
+    700: #97d4c3;
+    800: #bae2d7;
+    900: #dcf1eb;
+  };
+
+  --color-tropical-teal: {
+    100: #0a2021;
+    200: #154041;
+    300: #1f5f62;
+    400: #297f82;
+    500: #34a0a4;
+    600: #4bc2c6;
+    700: #78d1d4;
+    800: #a5e1e3;
+    900: #d2f0f1;
+  };
+
+  --color-bondi-blue: {
+    100: #041b22;
+    200: #093745;
+    300: #0d5267;
+    400: #126d89;
+    500: #168aad;
+    600: #1fb4e2;
+    700: #57c7e9;
+    800: #8fdaf0;
+    900: #c7ecf8;
+  };
+
+  --color-cerulean: {
+    100: #051720;
+    200: #0a2e3f;
+    300: #0f465f;
+    400: #155d7e;
+    500: #1a759f;
+    600: #239dd6;
+    700: #57b7e4;
+    800: #8fcfed;
+    900: #c7e7f6;
+  };
+
+  --color-baltic-blue: {
+    100: #06131d;
+    200: #0c263a;
+    300: #123956;
+    400: #184b73;
+    500: #1e6091;
+    600: #2983c8;
+    700: #57a3dd;
+    800: #8fc2e8;
+    900: #c2def3;
+  };
+
+  --color-yale-blue: {
+    100: #051018;
+    200: #0a1f2f;
+    300: #0f2f47;
+    400: #133e5f;
+    500: #184e77;
+    600: #2576b3;
+    700: #489bda;
+    800: #85bce6;
+    900: #c2def3;
+  };
+
+  --color-frosted-mint: {
+    100: #16461d;
+    200: #2b8c3a;
+    300: #4cc85e;
+    400: #92dd9d;
+    500: #d8f3dc;
+    600: #e0f5e3;
+    700: #e8f8ea;
+    800: #effaf1;
+    900: #f7fdf8;
+  };
+
+  --color-celadon: {
+    100: #173c24;
+    200: #2d7847;
+    300: #44b46b;
+    400: #7dce99;
+    500: #b7e4c7;
+    600: #c7ead3;
+    700: #d5efde;
+    800: #e3f4e9;
+    900: #f1faf4;
+  };
+
+  --color-mint-leaf: {
+    100: #122d20;
+    200: #255a3f;
+    300: #37875f;
+    400: #49b47e;
+    500: #74c69d;
+    600: #91d2b1;
+    700: #acddc5;
+    800: #c8e9d8;
+    900: #e3f4ec;
+  };
+
+  --color-sea-green: {
+    100: #0d1d16;
+    200: #1a3a2b;
+    300: #265741;
+    400: #337457;
+    500: #40916c;
+    600: #58b68b;
+    700: #82c8a8;
+    800: #abdac5;
+    900: #d5ede2;
+  };
+
+  --color-dark-emerald: {
+    100: #091510;
+    200: #122b20;
+    300: #1c4030;
+    400: #255640;
+    500: #2d6a4f;
+    600: #439d75;
+    700: #69bf98;
+    800: #9bd4ba;
+    900: #cdeadd;
+  };
+
+  --color-pine-teal: {
+    100: #050d0a;
+    200: #0a1a14;
+    300: #10271e;
+    400: #153527;
+    500: #1b4332;
+    600: #327d5e;
+    700: #4cb78b;
+    800: #87cfb1;
+    900: #c3e7d8;
+  };
+
+  --color-evergreen: {
+    100: #020604;
+    200: #030b08;
+    300: #05110d;
+    400: #061611;
+    500: #081c15;
+    600: #1d664c;
+    700: #32b084;
+    800: #6bd5b0;
+    900: #b5ead8;
+  };
 }
+
 
 /* ============================================
    TYPOGRAPHY SYSTEM
@@ -444,6 +637,136 @@ pre {
 
   .dark .text-gradient-primary {
     background: linear-gradient(135deg, #6fa3d4 0%, #8bb4db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* HEADING GRADIENTS - Multiple beautiful combinations */
+  
+  /* Lime to Light Green */
+  .heading-gradient-lime {
+    background: linear-gradient(135deg, #d9ed92 0%, #b5e48c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Light Green to Emerald */
+  .heading-gradient-green {
+    background: linear-gradient(135deg, #b5e48c 0%, #76c893 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Emerald to Ocean Mist */
+  .heading-gradient-ocean {
+    background: linear-gradient(135deg, #76c893 0%, #52b69a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Ocean Mist to Tropical Teal */
+  .heading-gradient-teal {
+    background: linear-gradient(135deg, #52b69a 0%, #34a0a4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Tropical Teal to Bondi Blue */
+  .heading-gradient-bondi {
+    background: linear-gradient(135deg, #34a0a4 0%, #168aad 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Bondi Blue to Cerulean */
+  .heading-gradient-blue {
+    background: linear-gradient(135deg, #168aad 0%, #1a759f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Cerulean to Baltic Blue */
+  .heading-gradient-baltic {
+    background: linear-gradient(135deg, #1a759f 0%, #1e6091 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Baltic to Yale Blue */
+  .heading-gradient-yale {
+    background: linear-gradient(135deg, #1e6091 0%, #184e77 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Lime to Emerald (warm to cool) */
+  .heading-gradient-warm-cool {
+    background: linear-gradient(135deg, #d9ed92 0%, #76c893 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Ocean Mist to Cerulean (cool tones) */
+  .heading-gradient-cool {
+    background: linear-gradient(135deg, #52b69a 0%, #1a759f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Frosted Mint to Celadon */
+  .heading-gradient-mint {
+    background: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Mint Leaf to Sea Green */
+  .heading-gradient-leaf {
+    background: linear-gradient(135deg, #74c69d 0%, #40916c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Dark Emerald to Pine Teal */
+  .heading-gradient-dark-green {
+    background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Pine Teal to Evergreen */
+  .heading-gradient-evergreen {
+    background: linear-gradient(135deg, #1b4332 0%, #081c15 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Lime to Tropical Teal (full spectrum) */
+  .heading-gradient-spectrum {
+    background: linear-gradient(135deg, #d9ed92 0%, #34a0a4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Celadon to Mint Leaf (soft green) */
+  .heading-gradient-soft-green {
+    background: linear-gradient(135deg, #95d5b2 0%, #52b788 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

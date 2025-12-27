@@ -1,0 +1,77 @@
+{
+  "heroCarousel": {
+    "opening": "This school exists for a reason.",
+    "slides": [
+      {
+        "image": "/images/IMG-20251223-WA0064.jpg",
+        "title": "We form young people who think deeply",
+        "subtitle": "Act with integrity, and contribute meaningfully to the world."
+      },
+      {
+        "image": "/images/IMG-20251223-WA0065.jpg",
+        "title": "Building Leaders with Islamic Values",
+        "subtitle": "Rigorous academics rooted in faith and character development."
+      },
+      {
+        "image": "/images/IMG-20251223-WA0073.jpg",
+        "title": "Join Our Community",
+        "subtitle": "Where excellence meets compassion, and growth never stops."
+      }
+    ]
+  },
+  "heroSection": {
+    "opening": "This school exists for a reason.",
+    "mainHeading": "We form young people who think deeply, act with integrity, and contribute meaningfully to the world.",
+    "sectionHeading": "How do we form tomorrow's leaders?",
+    "pillars": [
+      {
+        "icon": "🧠",
+        "title": "Who We Form",
+        "description": "Thoughtful learners grounded in Islamic values and rigorous academics."
+      },
+      {
+        "icon": "🌟",
+        "title": "Their Values",
+        "description": "Integrity. Depth. Faith. The commitment to grow as whole people."
+      },
+      {
+        "icon": "🚀",
+        "title": "Their Future",
+        "description": "Leaders. Changemakers. People who will serve with wisdom and courage."
+      }
+    ],
+    "stats": [
+      { "number": "250+", "label": "Students" },
+      { "number": "12+", "label": "Years" },
+      { "number": "25+", "label": "Teachers" },
+      { "number": "98%", "label": "Success Rate" },
+      { "number": "6", "label": "Grades" },
+      { "number": "2013", "label": "Founded" }
+    ],
+    "ctaText": "Ready to learn more about our community?",
+    "ctaButtons": [
+      {
+        "text": "Our Story",
+        "href": "/about"
+      },
+      {
+        "text": "Get in Touch",
+        "href": "tel:+256702962984"
+      }
+    ]
+  },
+  "contact": {
+    "sectionHeading": "Get In Touch",
+    "sectionDescription": "Ready to enroll or have questions? Contact us today!",
+    "callUs": "Call Us",
+    "alternative": "Alternative",
+    "directLine": "Direct Line",
+    "email": "Email",
+    "visitLocation": "Visit Our Location",
+    "location": "Busembatia, Namutumba, Uganda",
+    "locationDescription": "Located just 500 metres from Busembatia town centre, along the Busembatia to Mbale road in Eastern Uganda. Easily accessible and conveniently positioned for families from the region.",
+    "coordinates": "Coordinates: 0.7801°S, 33.6305°E",
+    "visitText": "Feel free to visit us in person or contact us via phone or email. We welcome prospective students and parents to explore our facilities and meet our team.",
+    "scheduleButton": "Schedule a Visit"
+  }
+}

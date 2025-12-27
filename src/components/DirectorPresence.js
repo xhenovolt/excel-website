@@ -15,7 +15,7 @@ export default function DirectorPresence({ data, variant = 'about' }) {
       <div className="max-w-3xl mx-auto">
         <div className="border-l-4 border-slate-800 dark:border-slate-200 pl-6 md:pl-8">
           {/* Heading */}
-          <h2 className={`font-semibold text-slate-900 dark:text-slate-50 mb-4 ${
+          <h2 className={`font-semibold heading-gradient-lime mb-4 ${
             isCondensed ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'
           }`}>
             {isCondensed ? 'Leadership' : 'Institutional Direction'}

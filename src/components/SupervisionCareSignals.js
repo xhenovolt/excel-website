@@ -25,7 +25,7 @@ export default function SupervisionCareSignals({ data, variant = 'about' }) {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-slate-900 dark:text-slate-50">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-3 heading-gradient-teal">
             Supervision & Care
           </h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">

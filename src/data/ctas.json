@@ -1,0 +1,98 @@
+{
+  "softActions": {
+    "description": "Respectful, dignity-preserving calls to action",
+    "philosophy": "The parent controls the pace. We show what happens next before asking for commitment.",
+    "primaryActions": [
+      {
+        "id": "visit",
+        "label": "Visit the School",
+        "icon": "MapPin",
+        "description": "Experience our community in person",
+        "explainer": "Schedule a campus visit to see our classrooms, meet teachers, and understand our daily rhythm. No commitment needed—just come learn who we are.",
+        "nextStep": "We'll help you pick a time that works for you. You'll meet our team and see the school operating normally.",
+        "cta": "Check Availability",
+        "action": "contact",
+        "tone": "invitation"
+      },
+      {
+        "id": "speak",
+        "label": "Speak to Administration",
+        "icon": "Phone",
+        "description": "Ask your questions directly",
+        "explainer": "Have specific questions? Call or message our team. They can help you understand if we're the right fit for your child.",
+        "nextStep": "A staff member will respond within 24 hours. You control the conversation pace.",
+        "cta": "Start a Conversation",
+        "action": "contact",
+        "tone": "support"
+      },
+      {
+        "id": "admissions",
+        "label": "View Admissions Process",
+        "icon": "FileText",
+        "description": "Understand the next steps",
+        "explainer": "See exactly what the admissions process looks like. No surprises, no hidden steps. Just transparency about how enrollment works.",
+        "nextStep": "We'll show you the 4-step admissions ladder and explain what happens at each stage.",
+        "cta": "Learn the Process",
+        "action": "navigation",
+        "link": "/admissions",
+        "tone": "clarity"
+      }
+    ],
+    "readinessTriggers": {
+      "firstVisit": {
+        "threshold": 0,
+        "ctaType": "informational",
+        "message": "Learn about our school at your own pace.",
+        "actions": ["admissions", "visit"]
+      },
+      "afterHeroSection": {
+        "threshold": 1,
+        "ctaType": "informational",
+        "message": "Ready to explore more?",
+        "actions": ["admissions", "visit"]
+      },
+      "afterDailyLifeSection": {
+        "threshold": 2,
+        "ctaType": "engagement",
+        "message": "Questions about daily life? Let's talk.",
+        "actions": ["speak", "visit"]
+      },
+      "afterSupervisionSection": {
+        "threshold": 3,
+        "ctaType": "engagement",
+        "message": "Want to know more about our care systems?",
+        "actions": ["speak", "visit"]
+      },
+      "onAdmissionsPage": {
+        "threshold": 4,
+        "ctaType": "nextStep",
+        "message": "Ready to take the next step?",
+        "actions": ["speak"]
+      }
+    },
+    "contactOptions": {
+      "phone": {
+        "label": "Call Us",
+        "value": "+256702962984",
+        "description": "Speak directly with our team"
+      },
+      "email": {
+        "label": "Email Us",
+        "value": "info@excelislamicschool.ug",
+        "description": "Send us your questions"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "+256702962984",
+        "description": "Quick message when it suits you"
+      }
+    },
+    "behaviorRules": {
+      "showAfterScroll": "Only show CTAs after user has scrolled past key content",
+      "noPopups": "Never interrupt with modals or overlays",
+      "noTimePressure": "Never use countdowns, 'limited spots', or urgency language",
+      "respectChoice": "If user closes CTA, don't show it again for 3 minutes",
+      "mobileFirst": "Stack vertically on mobile, grid on desktop"
+    }
+  }
+}

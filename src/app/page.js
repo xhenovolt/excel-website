@@ -27,6 +27,10 @@ import PathSelector from '@/components/PathSelector';
 import DailyLifeStructure from '@/components/DailyLifeStructure';
 import SupervisionCareSignals from '@/components/SupervisionCareSignals';
 import DirectorPresence from '@/components/DirectorPresence';
+import SoftActionGateway from '@/components/SoftActionGateway';
+import ReadinessCTA from '@/components/ReadinessCTA';
+import HeroCarouselMultilingual from '@/components/HeroCarouselMultilingual';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -279,18 +283,21 @@ export default function Home() {
   const [dailyLifeData, setDailyLifeData] = useState(null);
   const [supervisionData, setSupervisionData] = useState(null);
   const [institutionData, setInstitutionData] = useState(null);
+  const [ctasData, setCtasData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { content: languageContent, isLoading: isLanguageLoading } = useLanguage();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [schoolRes, academicsRes, aboutRes, dailyLifeRes, supervisionRes, institutionRes] = await Promise.all([
+        const [schoolRes, academicsRes, aboutRes, dailyLifeRes, supervisionRes, institutionRes, ctasRes] = await Promise.all([
           fetch('/api/school'),
           fetch('/api/academics'),
           fetch('/api/about'),
           fetch('/api/dailyLife'),
           fetch('/api/supervision'),
           fetch('/api/institution'),
+          fetch('/api/ctas'),
         ]);
 
         const schoolJson = await schoolRes.json();
@@ -299,6 +306,7 @@ export default function Home() {
         const dailyLifeJson = await dailyLifeRes.json();
         const supervisionJson = await supervisionRes.json();
         const institutionJson = await institutionRes.json();
+        const ctasJson = await ctasRes.json();
 
         setSchoolData(schoolJson.school);
         setAcademicsData(academicsJson.academics || academicsJson);
@@ -306,6 +314,7 @@ export default function Home() {
         setDailyLifeData(dailyLifeJson);
         setSupervisionData(supervisionJson);
         setInstitutionData(institutionJson);
+        setCtasData(ctasJson);
       } catch (error) {
         console.error('Failed to fetch data:', error);
       } finally {
@@ -337,11 +346,11 @@ export default function Home() {
       {/* Navigation */}
       <Navigation />
 
-      {/* Hero Section - Image Carousel */}
-      <HeroCarousel />
+      {/* Hero Section - Image Carousel with Multilingual Support */}
+      <HeroCarouselMultilingual />
 
       {/* Content Section */}
-      <section className="bg-white dark:bg-neutral-900 flex flex-col items-center justify-center px-4 md:px-8 py-20 md:py-32 relative overflow-hidden">
+      <section id="hero-section" className="bg-white dark:bg-neutral-900 flex flex-col items-center justify-center px-4 md:px-8 py-20 md:py-32 relative overflow-hidden">
         <div className="max-w-3xl mx-auto relative z-10">
           {/* Opening line - the thesis */}
           <motion.div
@@ -351,7 +360,7 @@ export default function Home() {
             className="mb-8 md:mb-16"
           >
             <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
-              This school exists for a reason.
+              {languageContent?.heroSection?.opening || 'This school exists for a reason.'}
             </p>
           </motion.div>
 
@@ -362,9 +371,9 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mb-8 md:mb-12"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight bg-gradient-to-r from-emerald-600 to-blue-600 dark:from-emerald-400 dark:to-blue-400 bg-clip-text text-transparent mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight heading-gradient-warm-cool mb-6">
               <ProgressiveReveal
-                text="We form young people who think deeply, act with integrity, and contribute meaningfully to the world."
+                text={languageContent?.heroSection?.mainHeading || 'We form young people who think deeply, act with integrity, and contribute meaningfully to the world.'}
                 delay={0.4}
               />
             </h1>
@@ -378,73 +387,36 @@ export default function Home() {
             className="mb-16 md:mb-24 pb-16 md:pb-24 border-b border-neutral-200 dark:border-neutral-800"
           >
             {/* Unified question with gradient */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16 text-neutral-900 dark:text-neutral-50">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight heading-gradient-spectrum mb-16">
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 dark:from-emerald-400 dark:to-blue-400 bg-clip-text text-transparent">
-                How do we form tomorrow's leaders?
+                {languageContent?.heroSection?.sectionHeading || 'How do we form tomorrow\'s leaders?'}
               </span>
             </h2>
 
             {/* Three pillars - cleaner layout */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-blue-100 dark:from-emerald-900/20 dark:to-blue-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">🧠</span>
-                    <h3 className="text-lg md:text-xl font-semibold text-emerald-600 dark:text-emerald-400">
-                      Who We Form
-                    </h3>
+              {languageContent?.heroSection?.pillars?.map((pillar, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 + idx * 0.15 }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-blue-100 dark:from-emerald-900/20 dark:to-blue-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-3xl">{pillar.icon}</span>
+                      <h3 className="text-lg md:text-xl font-semibold text-emerald-600 dark:text-emerald-400">
+                        {pillar.title}
+                      </h3>
+                    </div>
+                    <p className="text-base text-neutral-700 dark:text-neutral-300 font-light leading-relaxed">
+                      {pillar.description}
+                    </p>
                   </div>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 font-light leading-relaxed">
-                    Thoughtful learners grounded in Islamic values and rigorous academics.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.35 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-blue-100 dark:from-emerald-900/20 dark:to-blue-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">🌟</span>
-                    <h3 className="text-lg md:text-xl font-semibold bg-gradient-to-r from-emerald-600 to-blue-600 dark:from-emerald-400 dark:to-blue-400 bg-clip-text text-transparent">
-                      Their Values
-                    </h3>
-                  </div>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 font-light leading-relaxed">
-                    Integrity. Depth. Faith. The commitment to grow as whole people.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-blue-100 dark:from-emerald-900/20 dark:to-blue-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">🚀</span>
-                    <h3 className="text-lg md:text-xl font-semibold text-blue-600 dark:text-blue-400">
-                      Their Future
-                    </h3>
-                  </div>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 font-light leading-relaxed">
-                    Leaders. Changemakers. People who will serve with wisdom and courage.
-                  </p>
-                </div>
-              </motion.div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
@@ -455,14 +427,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 1.4 }}
             className="grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 mb-16 md:mb-20 text-center"
           >
-            {[
-              { number: '250+', label: 'Students' },
-              { number: '12+', label: 'Years' },
-              { number: '25+', label: 'Teachers' },
-              { number: '98%', label: 'Success Rate' },
-              { number: '6', label: 'Grades' },
-              { number: '2013', label: 'Founded' },
-            ].map((stat, i) => (
+            {languageContent?.heroSection?.stats?.map((stat, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
@@ -487,20 +452,20 @@ export default function Home() {
             className="text-center space-y-8"
           >
             <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 font-light">
-              Ready to learn more about our community?
+              {languageContent?.heroSection?.ctaText || 'Ready to learn more about our community?'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/about"
                 className="px-8 py-3 md:py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300"
               >
-                Our Story
+                {languageContent?.heroSection?.ctaButtons?.[0]?.text || 'Our Story'}
               </a>
               <a
                 href="tel:+256702962984"
                 className="px-8 py-3 md:py-4 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 font-medium rounded-lg hover:bg-primary-50 dark:hover:bg-neutral-900 transition-colors duration-300"
               >
-                Get in Touch
+                {languageContent?.heroSection?.ctaButtons?.[1]?.text || 'Get in Touch'}
               </a>
             </div>
           </motion.div>
@@ -973,13 +938,22 @@ export default function Home() {
       )}
 
       {/* Daily Life Structure - Transparency & Order */}
-      {dailyLifeData && (
-        <DailyLifeStructure data={dailyLifeData} variant="home" />
-      )}
+      <div id="daily-life-section">
+        {dailyLifeData && (
+          <DailyLifeStructure data={dailyLifeData} variant="home" />
+        )}
+      </div>
 
       {/* Supervision & Care Signals - Parent Reassurance */}
-      {supervisionData && (
-        <SupervisionCareSignals data={supervisionData} variant="admissions" />
+      <div id="supervision-section">
+        {supervisionData && (
+          <SupervisionCareSignals data={supervisionData} variant="admissions" />
+        )}
+      </div>
+
+      {/* Soft Action Gateway - Respectful CTA */}
+      {ctasData && (
+        <SoftActionGateway data={ctasData} placement="home" />
       )}
 
       {/* Contact Section */}
@@ -995,10 +969,10 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Get In Touch
+              {languageContent?.contact?.sectionHeading || 'Get In Touch'}
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-              Ready to enroll or have questions? Contact us today!
+              {languageContent?.contact?.sectionDescription || 'Ready to enroll or have questions? Contact us today!'}
             </p>
           </motion.div>
 
@@ -1011,7 +985,7 @@ export default function Home() {
               className="bg-white dark:bg-neutral-900 rounded-xl p-6 text-center border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-shadow duration-300"
             >
               <Phone className="w-8 h-8 text-primary-600 mx-auto mb-3" />
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">Call Us</p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">{languageContent?.contact?.callUs || 'Call Us'}</p>
               <p className="font-bold text-neutral-900 dark:text-neutral-50">
                 {contact.phones?.[0]}
               </p>
@@ -1024,7 +998,7 @@ export default function Home() {
               className="bg-white dark:bg-neutral-900 rounded-xl p-6 text-center border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-shadow duration-300"
             >
               <Phone className="w-8 h-8 text-primary-600 mx-auto mb-3" />
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">Alternative</p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">{languageContent?.contact?.alternative || 'Alternative'}</p>
               <p className="font-bold text-neutral-900 dark:text-neutral-50">
                 {contact.phones?.[1]}
               </p>
@@ -1037,7 +1011,7 @@ export default function Home() {
               className="bg-white dark:bg-neutral-900 rounded-xl p-6 text-center border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-shadow duration-300"
             >
               <Phone className="w-8 h-8 text-accent-600 mx-auto mb-3" />
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">Direct Line</p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">{languageContent?.contact?.directLine || 'Direct Line'}</p>
               <p className="font-bold text-neutral-900 dark:text-neutral-50">
                 {contact.phones?.[2]}
               </p>
@@ -1050,7 +1024,7 @@ export default function Home() {
               className="bg-white dark:bg-neutral-900 rounded-xl p-6 text-center border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-shadow duration-300"
             >
               <Mail className="w-8 h-8 text-red-600 mx-auto mb-3" />
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">Email</p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">{languageContent?.contact?.email || 'Email'}</p>
               <p className="font-bold text-neutral-900 dark:text-neutral-50 text-sm break-all">
                 {contact.email}
               </p>
@@ -1079,29 +1053,29 @@ export default function Home() {
 
             {/* Location Info */}
             <div className="p-8 md:p-12">
-              <h3 className="text-2xl font-bold mb-6">Visit Our Location</h3>
+              <h3 className="text-2xl font-bold mb-6">{languageContent?.contact?.visitLocation || 'Visit Our Location'}</h3>
               <div className="flex items-start gap-4 mb-8">
                 <MapPin className="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-bold text-lg mb-2">Busembatia, Namutumba, Uganda</p>
+                  <p className="font-bold text-lg mb-2">{languageContent?.contact?.location || 'Busembatia, Namutumba, Uganda'}</p>
                   <p className="text-neutral-600 dark:text-neutral-400 mb-3">
-                    Located just 500 metres from Busembatia town centre, along the Busembatia to Mbale road in Eastern Uganda. Easily accessible and conveniently positioned for families from the region.
+                    {languageContent?.contact?.locationDescription || 'Located just 500 metres from Busembatia town centre, along the Busembatia to Mbale road in Eastern Uganda. Easily accessible and conveniently positioned for families from the region.'}
                   </p>
                   <p className="text-neutral-600 dark:text-neutral-400">
-                    Coordinates: 0.7801°S, 33.6305°E
+                    {languageContent?.contact?.coordinates || 'Coordinates: 0.7801°S, 33.6305°E'}
                   </p>
                 </div>
               </div>
 
               <p className="text-neutral-700 dark:text-neutral-300 mb-8">
-                Feel free to visit us in person or contact us via phone or email. We welcome prospective students and parents to explore our facilities and meet our team.
+                {languageContent?.contact?.visitText || 'Feel free to visit us in person or contact us via phone or email. We welcome prospective students and parents to explore our facilities and meet our team.'}
               </p>
 
               <a
                 href="tel:+256702962984"
                 className="inline-block px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-bold transition-colors duration-300"
               >
-                Schedule a Visit
+                {languageContent?.contact?.scheduleButton || 'Schedule a Visit'}
               </a>
             </div>
           </motion.div>
@@ -1133,6 +1107,11 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Readiness CTA - Scroll-based, respects user pace */}
+      {ctasData && (
+        <ReadinessCTA data={ctasData} placement="home" />
+      )}
 
       {/* Floating Action Button */}
       <FloatingActionButton />
