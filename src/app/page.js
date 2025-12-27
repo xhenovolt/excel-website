@@ -31,6 +31,8 @@ import SoftActionGateway from '@/components/SoftActionGateway';
 import ReadinessCTA from '@/components/ReadinessCTA';
 import HeroCarouselMultilingual from '@/components/HeroCarouselMultilingual';
 import { useLanguage } from '@/hooks/useLanguage';
+import { ScrollIndicator, ScrollToSection } from '@/components/ScrollComponents';
+import { EnhancedCTA } from '@/components/EnhancedCTA';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -327,10 +329,20 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-neutral-900 flex items-center justify-center">
-        <div className="animate-pulse text-neutral-600 dark:text-neutral-400">
-          Loading...
-        </div>
+      <div className="min-h-screen bg-white dark:bg-neutral-900 flex flex-col items-center justify-center">
+        {/* Loading Animation */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+          className="w-12 h-12 border-4 border-primary-200 dark:border-primary-900 border-t-primary-600 dark:border-t-primary-400 rounded-full mb-4"
+        />
+        <motion.p
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="text-neutral-600 dark:text-neutral-400 text-lg font-light"
+        >
+          Loading your experience...
+        </motion.p>
       </div>
     );
   }
@@ -343,6 +355,9 @@ export default function Home() {
 
   return (
     <div className="bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50 overflow-hidden">
+      {/* Scroll Progress Indicator */}
+      <ScrollIndicator />
+
       {/* Navigation */}
       <Navigation />
 
@@ -454,20 +469,14 @@ export default function Home() {
             <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 font-light">
               {languageContent?.heroSection?.ctaText || 'Ready to learn more about our community?'}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/about"
-                className="px-8 py-3 md:py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300"
-              >
-                {languageContent?.heroSection?.ctaButtons?.[0]?.text || 'Our Story'}
-              </a>
-              <a
-                href="tel:+256702962984"
-                className="px-8 py-3 md:py-4 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 font-medium rounded-lg hover:bg-primary-50 dark:hover:bg-neutral-900 transition-colors duration-300"
-              >
-                {languageContent?.heroSection?.ctaButtons?.[1]?.text || 'Get in Touch'}
-              </a>
-            </div>
+            <EnhancedCTA 
+              primary={languageContent?.heroSection?.ctaButtons?.[0]?.text || 'Our Story'}
+              secondary={languageContent?.heroSection?.ctaButtons?.[1]?.text || 'Get in Touch'}
+              onPrimary={() => window.location.href = '/about'}
+              onSecondary={() => window.location.href = 'tel:+256702962984'}
+              variant="default"
+              size="md"
+            />
           </motion.div>
         </div>
       </section>
